@@ -86,7 +86,8 @@ extension BrowserViewController {
         file(atRow: row) == nil ? 36 : viewMode == .content ? ContentResultCell.rowHeight(for: tableScroll.contentSize.width) : 29
     }
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        let view = FileRowView(); view.contentSeparator = viewMode == .content && file(atRow: row) != nil
+        let view = FileRowView(); view.hoverEnabled = file(atRow: row) != nil
+        view.contentSeparator = viewMode == .content && file(atRow: row) != nil
         return view
     }
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool { file(atRow: row) != nil }

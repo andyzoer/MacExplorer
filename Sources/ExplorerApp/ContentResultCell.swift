@@ -42,10 +42,9 @@ final class ContentResultCell: NSTableCellView {
         kindLabel.stringValue = L10n.text("Type: %1$@", item.kind)
         picture.image = icon
         alphaValue = dimmed ? 0.35 : item.isHidden ? 0.6 : 1
-        nameLabel.toolTip = item.name
-        modifiedLabel.toolTip = modifiedLabel.stringValue; sizeLabel.toolTip = sizeLabel.stringValue
-        toolTip = [item.url.path, modifiedLabel.stringValue, sizeLabel.stringValue, kindLabel.stringValue, FileColors.description(item.finderColors)]
-            .filter { !$0.isEmpty }.joined(separator: "\n")
+        let tooltip = FileTooltip.text(for: item)
+        toolTip = tooltip
+        for child in [picture, nameLabel, modifiedLabel, sizeLabel, kindLabel] { child.toolTip = tooltip }
         needsLayout = true
     }
 

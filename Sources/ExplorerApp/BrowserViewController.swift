@@ -677,7 +677,10 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
         case "size": cell.textField?.stringValue = item.size.map { L10n.byteCount($0) } ?? "—"
         default: break
         }
-        cell.toolTip = column.identifier.rawValue == "name" ? [item.url.path, FileColors.description(item.finderColors)].filter { !$0.isEmpty }.joined(separator: "\n") : cell.textField?.stringValue
+        let tooltip = FileTooltip.text(for: item)
+        cell.toolTip = tooltip
+        if column.identifier.rawValue != "location" { cell.textField?.toolTip = tooltip }
+        cell.imageView?.toolTip = tooltip
         return cell
     }
     func makeCell(_ identifier: NSUserInterfaceItemIdentifier) -> NSTableCellView {

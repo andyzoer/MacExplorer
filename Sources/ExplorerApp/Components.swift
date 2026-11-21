@@ -153,9 +153,51 @@ final class SidebarRowView: NSTableRowView {
 @MainActor
 final class FileRowView: NSTableRowView {
     var contentSeparator = false { didSet { needsDisplay = true } }
+    var hoverEnabled = true { didSet { updateHover() } }
+    private(set) var hovering = false
+    private var tracking: NSTrackingArea?
+
     override var interiorBackgroundStyle: NSView.BackgroundStyle { .normal }
+    override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        if let tracking { removeTrackingArea(tracking) }
+        let area = NSTrackingArea(rect: .zero,
+                                 options: [.activeInKeyWindow, .mouseEnteredAndExited, .inVisibleRect],
+                                 owner: self)
+        tracking = area
+        addTrackingArea(area)
+        updateHover()
+    }
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        updateHover()
+    }
+    private func updateHover() {
+        hovering = hoverEnabled && window.map {
+            visibleRect.contains(convert($0.mouseLocationOutsideOfEventStream, from: nil))
+        } == true
+        needsDisplay = true
+    }
+    override func mouseEntered(with event: NSEvent) {
+        hovering = hoverEnabled
+        needsDisplay = true
+    }
+    override func mouseExited(with event: NSEvent) {
+        hovering = false
+        needsDisplay = true
+    }
     override func drawSelection(in dirtyRect: NSRect) {
         Palette.selected.setFill(); bounds.fill()
+    }
+    override func drawBackground(in dirtyRect: NSRect) {
+        super.drawBackground(in: dirtyRect)
+        guard hovering && !isSelected else { return }
+        let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 1.5, dy: 0.5), xRadius: 3, yRadius: 3)
+        NSColor.controlAccentColor.withAlphaComponent(0.10).setFill()
+        shape.fill()
+        NSColor.controlAccentColor.withAlphaComponent(0.55).setStroke()
+        shape.lineWidth = 1
+        shape.stroke()
     }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

@@ -69,15 +69,22 @@ private final class IconTile: Surface {
         tracking = NSTrackingArea(rect: .zero, options: [.activeInKeyWindow, .mouseEnteredAndExited, .inVisibleRect], owner: self)
         addTrackingArea(tracking!); super.updateTrackingAreas()
     }
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        if window == nil { resetHover() }
+    }
+    func resetHover() { hovering = false; needsDisplay = true }
     override func mouseEntered(with event: NSEvent) { hovering = true; needsDisplay = true }
-    override func mouseExited(with event: NSEvent) { hovering = false; needsDisplay = true }
+    override func mouseExited(with event: NSEvent) { resetHover() }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         if selected || hovering || dropTarget {
-            (selected || dropTarget ? Palette.selected : NSColor.labelColor.withAlphaComponent(0.04)).setFill()
+            (selected || dropTarget ? Palette.selected : NSColor.controlAccentColor.withAlphaComponent(0.10)).setFill()
             let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 2, dy: 2), xRadius: 7, yRadius: 7)
             shape.fill()
-            if dropTarget || selected { NSColor.controlAccentColor.withAlphaComponent(dropTarget ? 1 : 0.35).setStroke(); shape.lineWidth = dropTarget ? 2 : 1; shape.stroke() }
+            NSColor.controlAccentColor.withAlphaComponent(dropTarget ? 1 : hovering ? 0.55 : 0.35).setStroke()
+            shape.lineWidth = dropTarget ? 2 : 1
+            shape.stroke()
         }
     }
 }
@@ -128,7 +135,10 @@ final class FileIconItem: NSCollectionViewItem {
         self.location.configure(location ?? "", query: query, file: item.url, onOpen: location == nil ? nil : onReveal)
         picture.image = fallback
         picture.alphaValue = dimmed ? 0.35 : item.isHidden ? 0.6 : 1; name.alphaValue = picture.alphaValue
-        view.toolTip = [item.url.path, FileColors.description(item.finderColors)].filter { !$0.isEmpty }.joined(separator: "\n")
+        let tooltip = FileTooltip.text(for: item)
+        view.toolTip = tooltip
+        picture.toolTip = tooltip
+        name.toolTip = tooltip
         view.setAccessibilityLabel([item.name, FileColors.description(item.finderColors)].filter { !$0.isEmpty }.joined(separator: ", "))
         view.setAccessibilityHelp(item.isNavigable ? L10n.text("Folder. Double-click to open, or drop files here.") : L10n.text("Press Space for Quick Look."))
         view.needsLayout = true
@@ -142,6 +152,10 @@ final class FileIconItem: NSCollectionViewItem {
     func cancelThumbnail() { ThumbnailStore.shared.cancel(thumbnail); thumbnail = nil; representedPath = nil }
     override func prepareForReuse() {
         cancelThumbnail()
+        view.toolTip = nil
+        picture.toolTip = nil
+        name.toolTip = nil
+        (view as? IconTile)?.resetHover()
         location.configure("", query: "", file: URL(fileURLWithPath: "/"), onOpen: nil)
         super.prepareForReuse()
     }
