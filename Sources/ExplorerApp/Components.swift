@@ -88,10 +88,39 @@ class TitlebarSurface: Surface {
 }
 
 @MainActor
+enum ButtonHover {
+    // Tracking areas can be rebuilt while controls move or menus track the mouse.
+    // Keep one owner and validate coordinates instead of retaining independent flags.
+    private(set) static weak var current: NSView?
+
+    static func update(_ view: NSView, at point: NSPoint?) {
+        let inside = !view.isHiddenOrHasHiddenAncestor && point.map {
+            view.bounds.contains($0) && view.visibleRect.contains($0)
+        } == true
+        if inside {
+            guard current !== view else { return }
+            let previous = current
+            current = view
+            previous?.needsDisplay = true
+            view.needsDisplay = true
+        } else if current === view {
+            current = nil
+            view.needsDisplay = true
+        }
+    }
+
+    static func refresh(_ view: NSView) {
+        update(view, at: view.window.flatMap { window in
+            window.isKeyWindow ? view.convert(window.mouseLocationOutsideOfEventStream, from: nil) : nil
+        })
+    }
+}
+
+@MainActor
 final class ActionButton: NSButton {
     var actionBlock: (() -> Void)?
     private var tracking: NSTrackingArea?
-    private var hovering = false
+    var hovering: Bool { ButtonHover.current === self }
     var active = false { didSet { needsDisplay = true } }
     init(_ title: String = "", symbol: String? = nil, tooltip: String, maximumWidth: CGFloat? = nil, action: @escaping () -> Void) {
         super.init(frame: .zero)
@@ -113,21 +142,25 @@ final class ActionButton: NSButton {
     @objc private func invoke() { actionBlock?() }
     override func updateTrackingAreas() {
         if let tracking { removeTrackingArea(tracking) }
-        tracking = NSTrackingArea(rect: bounds, options: [.mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect], owner: self)
+        tracking = NSTrackingArea(rect: .zero, options: [.mouseEnteredAndExited, .mouseMoved, .activeInKeyWindow, .inVisibleRect], owner: self)
         addTrackingArea(tracking!); super.updateTrackingAreas()
-        hovering = window.map { visibleRect.contains(convert($0.mouseLocationOutsideOfEventStream, from: nil)) } == true
-        needsDisplay = true
+        ButtonHover.refresh(self)
     }
-    override func mouseEntered(with event: NSEvent) { hovering = true; needsDisplay = true }
-    override func mouseExited(with event: NSEvent) { hovering = false; needsDisplay = true }
+    override func viewDidMoveToWindow() { super.viewDidMoveToWindow(); ButtonHover.refresh(self) }
+    override func mouseEntered(with event: NSEvent) { ButtonHover.update(self, at: convert(event.locationInWindow, from: nil)) }
+    override func mouseMoved(with event: NSEvent) { ButtonHover.update(self, at: convert(event.locationInWindow, from: nil)) }
+    override func mouseExited(with event: NSEvent) { ButtonHover.update(self, at: nil) }
     override func draw(_ dirtyRect: NSRect) {
+        ButtonHover.refresh(self)
         if active || (hovering && isEnabled) {
             (active ? Palette.selected : NSColor.controlAccentColor.withAlphaComponent(0.10)).setFill()
             let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 1, dy: 1), xRadius: 5, yRadius: 5)
             shape.fill()
-            NSColor.controlAccentColor.withAlphaComponent(0.55).setStroke()
-            shape.lineWidth = 1
-            shape.stroke()
+            if hovering && isEnabled {
+                NSColor.controlAccentColor.withAlphaComponent(0.55).setStroke()
+                shape.lineWidth = 1
+                shape.stroke()
+            }
         }
         super.draw(dirtyRect)
     }
@@ -136,20 +169,22 @@ final class ActionButton: NSButton {
 @MainActor
 final class FlatMenuButton: NSPopUpButton {
     private var tracking: NSTrackingArea?
-    private var hovering = false
+    var hovering: Bool { ButtonHover.current === self }
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
         if let tracking { removeTrackingArea(tracking) }
         let area = NSTrackingArea(rect: .zero,
-                                 options: [.mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect], owner: self)
+                                 options: [.mouseEnteredAndExited, .mouseMoved, .activeInKeyWindow, .inVisibleRect], owner: self)
         tracking = area
         addTrackingArea(area)
-        hovering = window.map { visibleRect.contains(convert($0.mouseLocationOutsideOfEventStream, from: nil)) } == true
-        needsDisplay = true
+        ButtonHover.refresh(self)
     }
-    override func mouseEntered(with event: NSEvent) { hovering = true; needsDisplay = true }
-    override func mouseExited(with event: NSEvent) { hovering = false; needsDisplay = true }
+    override func viewDidMoveToWindow() { super.viewDidMoveToWindow(); ButtonHover.refresh(self) }
+    override func mouseEntered(with event: NSEvent) { ButtonHover.update(self, at: convert(event.locationInWindow, from: nil)) }
+    override func mouseMoved(with event: NSEvent) { ButtonHover.update(self, at: convert(event.locationInWindow, from: nil)) }
+    override func mouseExited(with event: NSEvent) { ButtonHover.update(self, at: nil) }
     override func draw(_ dirtyRect: NSRect) {
+        ButtonHover.refresh(self)
         if hovering && isEnabled {
             let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 1, dy: 1), xRadius: 5, yRadius: 5)
             NSColor.controlAccentColor.withAlphaComponent(0.10).setFill()
@@ -352,6 +387,8 @@ final class BrowserTabView: FolderDropSurface {
 
 @MainActor
 final class PathBar: Surface, NSComboBoxDelegate {
+    override var mouseDownCanMoveWindow: Bool { false }
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
     var onNavigate: ((URL) -> Void)?
     var onCommit: ((String) -> Void)?
     private let crumbs = NSStackView()
@@ -422,16 +459,24 @@ final class PathBar: Surface, NSComboBoxDelegate {
             let chevron = NSImageView(image: Palette.symbol("chevron.right", size: 9) ?? NSImage())
             chevron.contentTintColor = .tertiaryLabelColor; crumbs.addArrangedSubview(chevron)
             let name = component.path == FileManager.default.homeDirectoryForCurrentUser.path ? L10n.text("Home") : component.lastPathComponent
-            let button = ActionButton(name, tooltip: component.path, maximumWidth: 140) { [weak self] in self?.onNavigate?(component) }
+            let button = ActionButton(name, tooltip: component.path, maximumWidth: 140) { [weak self] in
+                guard let self else { return }
+                if component == self.url.standardizedFileURL { self.beginEditing() }
+                else { self.onNavigate?(component) }
+            }
             button.lineBreakMode = .byTruncatingMiddle
             crumbs.addArrangedSubview(button)
         }
     }
     func beginEditing() {
+        guard !editing else { return }
         field.removeAllItems()
         field.addItems(withObjectValues: RecentFolderStore.shared.paths)
         editing = true; crumbs.isHidden = true; field.isHidden = false
-        field.stringValue = BrowserLocation.isThisMac(url) ? L10n.text("This Mac") : url.path; window?.makeFirstResponder(field); field.selectText(nil)
+        field.stringValue = BrowserLocation.isThisMac(url) ? L10n.text("This Mac") : url.path
+        // selectText installs the field editor itself. Installing it twice sends
+        // an end-editing notification that would immediately hide this field.
+        field.selectText(nil)
     }
     func comboBoxSelectionDidChange(_ notification: Notification) {
         guard editing, let path = field.objectValueOfSelectedItem as? String else { return }

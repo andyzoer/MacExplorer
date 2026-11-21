@@ -5,6 +5,48 @@ import Testing
 
 @Suite @MainActor
 struct HoverTests {
+    @Test func toolbarHoverHasOneOwnerAndIgnoresStaleEnterEvents() throws {
+        _ = NSApplication.shared
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 600, height: 150),
+            styleMask: [.titled], backing: .buffered, defer: false)
+        window.isReleasedWhenClosed = false
+        defer { window.close() }
+        let root = Surface(frame: NSRect(x: 0, y: 0, width: 600, height: 150))
+        window.contentView = root
+        let first = ActionButton("First", tooltip: "First", action: {})
+        let second = ActionButton("Second", tooltip: "Second", action: {})
+        let menu = FlatMenuButton(frame: .zero, pullsDown: true)
+        for (index, view) in [first, second, menu].enumerated() {
+            root.addSubview(view)
+            view.frame = NSRect(x: 20 + index * 150, y: 50, width: 120, height: 30)
+        }
+        func event(over view: NSView) throws -> NSEvent {
+            try #require(NSEvent.mouseEvent(with: .mouseMoved,
+                location: view.convert(NSPoint(x: 10, y: 15), to: nil),
+                modifierFlags: [], timestamp: 0, windowNumber: window.windowNumber,
+                context: nil, eventNumber: 0, clickCount: 0, pressure: 0))
+        }
+        first.mouseEntered(with: try event(over: first))
+        #expect(first.hovering)
+        second.mouseEntered(with: try event(over: second))
+        #expect(second.hovering)
+        #expect(!first.hovering)
+        // A delayed enter from an old tracking area must not steal the highlight.
+        first.mouseEntered(with: try event(over: second))
+        #expect(!first.hovering)
+        #expect(second.hovering)
+        menu.mouseMoved(with: try event(over: menu))
+        #expect(menu.hovering)
+        #expect(!second.hovering)
+        first.mouseExited(with: try event(over: menu))
+        #expect(menu.hovering)
+        menu.removeFromSuperview()
+        #expect(!menu.hovering)
+        first.active = true
+        #expect(first.active)
+        #expect(!first.hovering)
+    }
+
     @Test func tableHeaderHoverTracksVisibleColumnsWithoutChangingSortOrSelection() throws {
         let table = NSTableView(frame: NSRect(x: 0, y: 0, width: 600, height: 200))
         table.columnAutoresizingStyle = .noColumnAutoresizing
