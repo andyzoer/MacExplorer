@@ -558,6 +558,7 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
             do {
                 let items = try await withTaskCancellationHandler { try await worker.value } onCancel: { worker.cancel() }
                 guard !Task.isCancelled, let self, let tab, tab.generation == generation, self.tab === tab else { return }
+                if !DemoData.active { RecentFolderStore.shared.record(url) }
                 tab.items = items; tab.loading = false
                 self.applyView()
                 if tab.changedDuringLoad { self.scheduleRefresh() }

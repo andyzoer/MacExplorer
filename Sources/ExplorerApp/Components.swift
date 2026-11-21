@@ -115,13 +115,19 @@ final class ActionButton: NSButton {
         if let tracking { removeTrackingArea(tracking) }
         tracking = NSTrackingArea(rect: bounds, options: [.mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect], owner: self)
         addTrackingArea(tracking!); super.updateTrackingAreas()
+        hovering = window.map { visibleRect.contains(convert($0.mouseLocationOutsideOfEventStream, from: nil)) } == true
+        needsDisplay = true
     }
     override func mouseEntered(with event: NSEvent) { hovering = true; needsDisplay = true }
     override func mouseExited(with event: NSEvent) { hovering = false; needsDisplay = true }
     override func draw(_ dirtyRect: NSRect) {
         if active || (hovering && isEnabled) {
-            (active ? Palette.selected : NSColor.labelColor.withAlphaComponent(0.055)).setFill()
-            NSBezierPath(roundedRect: bounds.insetBy(dx: 1, dy: 1), xRadius: 5, yRadius: 5).fill()
+            (active ? Palette.selected : NSColor.controlAccentColor.withAlphaComponent(0.10)).setFill()
+            let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 1, dy: 1), xRadius: 5, yRadius: 5)
+            shape.fill()
+            NSColor.controlAccentColor.withAlphaComponent(0.55).setStroke()
+            shape.lineWidth = 1
+            shape.stroke()
         }
         super.draw(dirtyRect)
     }
@@ -129,6 +135,31 @@ final class ActionButton: NSButton {
 
 @MainActor
 final class FlatMenuButton: NSPopUpButton {
+    private var tracking: NSTrackingArea?
+    private var hovering = false
+    override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        if let tracking { removeTrackingArea(tracking) }
+        let area = NSTrackingArea(rect: .zero,
+                                 options: [.mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect], owner: self)
+        tracking = area
+        addTrackingArea(area)
+        hovering = window.map { visibleRect.contains(convert($0.mouseLocationOutsideOfEventStream, from: nil)) } == true
+        needsDisplay = true
+    }
+    override func mouseEntered(with event: NSEvent) { hovering = true; needsDisplay = true }
+    override func mouseExited(with event: NSEvent) { hovering = false; needsDisplay = true }
+    override func draw(_ dirtyRect: NSRect) {
+        if hovering && isEnabled {
+            let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 1, dy: 1), xRadius: 5, yRadius: 5)
+            NSColor.controlAccentColor.withAlphaComponent(0.10).setFill()
+            shape.fill()
+            NSColor.controlAccentColor.withAlphaComponent(0.55).setStroke()
+            shape.lineWidth = 1
+            shape.stroke()
+        }
+        super.draw(dirtyRect)
+    }
     override init(frame: NSRect, pullsDown flag: Bool) {
         super.init(frame: frame, pullsDown: flag)
         isBordered = false; bezelStyle = .regularSquare; font = .systemFont(ofSize: 12)
@@ -142,7 +173,7 @@ final class ExplorerSplitView: NSSplitView {
 }
 
 @MainActor
-final class SidebarRowView: NSTableRowView {
+final class SidebarRowView: FileRowView {
     override var interiorBackgroundStyle: NSView.BackgroundStyle { .normal }
     override func drawSelection(in dirtyRect: NSRect) {
         Palette.selected.setFill()
@@ -151,7 +182,7 @@ final class SidebarRowView: NSTableRowView {
 }
 
 @MainActor
-final class FileRowView: NSTableRowView {
+class FileRowView: NSTableRowView {
     var contentSeparator = false { didSet { needsDisplay = true } }
     var hoverEnabled = true { didSet { updateHover() } }
     private(set) var hovering = false
@@ -320,11 +351,11 @@ final class BrowserTabView: FolderDropSurface {
 }
 
 @MainActor
-final class PathBar: Surface, NSTextFieldDelegate {
+final class PathBar: Surface, NSComboBoxDelegate {
     var onNavigate: ((URL) -> Void)?
     var onCommit: ((String) -> Void)?
     private let crumbs = NSStackView()
-    private let field = NSTextField()
+    let field = NSComboBox()
     private var url = FileManager.default.homeDirectoryForCurrentUser
     private var editing = false
     private var searchResults: String?
@@ -335,6 +366,9 @@ final class PathBar: Surface, NSTextFieldDelegate {
         crumbs.orientation = .horizontal; crumbs.spacing = 0
         field.isBordered = false; field.drawsBackground = false; field.font = .systemFont(ofSize: 12)
         field.delegate = self; field.target = self; field.action = #selector(commit)
+        field.completes = false
+        field.hasVerticalScroller = true
+        field.numberOfVisibleItems = 10
         field.setAccessibilityLabel(L10n.text("Folder path")); field.isHidden = true
         let edit = ActionButton(symbol: "pencil", tooltip: L10n.text("Edit folder path (⌘L)")) { [weak self] in self?.beginEditing() }
         for view in [crumbs, field, edit] { addSubview(view); view.translatesAutoresizingMaskIntoConstraints = false }
@@ -343,11 +377,20 @@ final class PathBar: Surface, NSTextFieldDelegate {
             crumbs.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7), crumbs.trailingAnchor.constraint(lessThanOrEqualTo: edit.leadingAnchor), crumbs.centerYAnchor.constraint(equalTo: centerYAnchor),
             field.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12), field.trailingAnchor.constraint(equalTo: edit.leadingAnchor, constant: -4), field.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
-        let click = NSClickGestureRecognizer(target: self, action: #selector(editClicked)); click.numberOfClicksRequired = 2
-        addGestureRecognizer(click)
+
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    @objc private func editClicked() { beginEditing() }
+    override func hitTest(_ point: NSPoint) -> NSView? {
+        guard let hit = super.hitTest(point) else { return nil }
+        if editing { return hit }
+        var ancestor: NSView? = hit
+        while let view = ancestor, view !== self {
+            if view is NSButton { return hit }
+            ancestor = view.superview
+        }
+        return self
+    }
+    override func mouseDown(with event: NSEvent) { beginEditing() }
     func update(_ url: URL, searchResults: String? = nil) {
         self.searchResults = searchResults
         self.url = url; field.stringValue = BrowserLocation.isThisMac(url) ? L10n.text("This Mac") : url.path
@@ -385,11 +428,22 @@ final class PathBar: Surface, NSTextFieldDelegate {
         }
     }
     func beginEditing() {
+        field.removeAllItems()
+        field.addItems(withObjectValues: RecentFolderStore.shared.paths)
         editing = true; crumbs.isHidden = true; field.isHidden = false
         field.stringValue = BrowserLocation.isThisMac(url) ? L10n.text("This Mac") : url.path; window?.makeFirstResponder(field); field.selectText(nil)
     }
+    func comboBoxSelectionDidChange(_ notification: Notification) {
+        guard editing, let path = field.objectValueOfSelectedItem as? String else { return }
+        field.stringValue = path
+        commit()
+    }
     @objc private func commit() {
-        let text = field.stringValue; window?.makeFirstResponder(nil)
+        guard editing else { return }
+        let text = field.stringValue
+        editing = false
+        window?.makeFirstResponder(nil)
+        update(url, searchResults: searchResults)
         onCommit?(text)
     }
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {

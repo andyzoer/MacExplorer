@@ -193,7 +193,11 @@ final class FolderSidebar: NSViewController, NSOutlineViewDataSource, NSOutlineV
         if url == FileManager.default.homeDirectoryForCurrentUser { return "house.fill" }
         return ["Desktop": "desktopcomputer", "Downloads": "arrow.down.circle.fill", "Documents": "doc.text.fill", "Pictures": "photo.fill", "Music": "music.note", "Movies": "film.fill"][url.lastPathComponent] ?? "folder.fill"
     }
-    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? { SidebarRowView() }
+    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
+        let row = SidebarRowView()
+        row.hoverEnabled = (item as? FolderNode)?.url != nil
+        return row
+    }
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         guard let node = item as? FolderNode else { return roots.count }
         return node.children?.count ?? 1
