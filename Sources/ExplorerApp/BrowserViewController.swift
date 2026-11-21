@@ -313,6 +313,7 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
     }
 
     func buildFileTable() {
+        table.headerView = FileTableHeaderView(frame: table.headerView?.frame ?? NSRect(x: 0, y: 0, width: 0, height: 23))
         detailsHeaderView = table.headerView
         tableScroll.contentView.postsFrameChangedNotifications = true
         NotificationCenter.default.addObserver(self, selector: #selector(contentTableResized(_:)), name: NSView.frameDidChangeNotification, object: tableScroll.contentView)
