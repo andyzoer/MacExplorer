@@ -14,6 +14,6 @@ For **Photoshop PSD** and **Illustrator AI**, save a blank document from Photosh
 
 Preferences are stored locally in the app's UserDefaults. Changes apply to newly opened menus immediately, without restarting. Removing an entry does not delete files created with it; private imported template copies are retained. The Create menu strings are translated in all 42 external language packs, with English fallback for partial/custom packs. New translations are machine-assisted with terminology corrections and may still benefit from review by fluent speakers. Existing external language packs remain compatible. To update installed packs, extract the language-pack archive, open Settings → General → Install Language Packs…, choose its Localizations folder, and restart Explorer. Importing a pack replaces the installed pack for that language; retain a copy of any personal translation edits.
 
-This personal branch is not published or proposed upstream. Existing installation and language-pack locations are unchanged.
+This personal build is published in the fork’s `personal-enhancements` branch and is not proposed upstream. Existing installation and language-pack locations are unchanged.
 
 Development: `scripts/generate-document-templates.py` regenerates the bundled Office resources using python-docx, openpyxl and python-pptx. These are development tools, not application dependencies.

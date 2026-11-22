@@ -2,15 +2,21 @@
   <img src="docs/images/app-icon.png" width="96" height="96" alt="MacExplorer folder icon">
 </p>
 
-# MacExplorer
+# MacExplorer — personal enhancements
 
-The [original MacExplorer project](https://github.com/binaryquest/MacExplorer) was developed by [Sazzad Hossain](https://github.com/djad442) at Binary Quest. My contribution to this fork is the multilingual interface and support for external language packs. — [andyzoer](https://github.com/andyzoer)
+The [original MacExplorer project](https://github.com/binaryquest/MacExplorer) was developed by [Sazzad Hossain](https://github.com/djad442) at Binary Quest. My contributions to this branch include the multilingual interface, external language packs, and the personal enhancements described below. — [andyzoer](https://github.com/andyzoer)
 
 A native macOS file manager for people who like Windows Explorer.
 
 MacExplorer brings familiar tabs, a folder tree, drive overviews, and keyboard shortcuts to the Mac, with native Quick Look, thumbnails, and Finder color tags. Built with Swift and AppKit, with Sparkle for signed software updates.
 
 **Early development · macOS 14+ · MIT licensed**
+
+## Personal enhancements branch
+
+This branch adds hover and selection feedback, editable paths with recent-folder history, a configurable **Create** menu with document templates, and volume ejection with a fix for reopening DMG images. The installer also adds missing translation keys to existing language packs while preserving personal edits.
+
+See the [English overview of all personal updates](docs/PERSONAL-ENHANCEMENTS.md) and the [Create menu guide](CREATE-MENU.md). These changes are published separately in `personal-enhancements`; the fork’s default branch is maintained independently. No upstream pull request is being proposed for these personal additions, and ongoing maintenance is not promised.
 
 ## Multilingual edition
 
@@ -25,7 +31,7 @@ The language packs use machine translation with some manual edits. Translations 
 
 ### Installation
 
-1. If you have the multilingual edition’s DMG, open it and double-click **Install Explorer.command**. It installs Explorer in **Applications** and copies the language packs into your user Library.
+1. If you have the multilingual edition’s DMG, open it and double-click **Install Explorer.command**. It installs Explorer in **Applications**, adds missing language packs and translation keys in your user Library, and preserves existing translations.
 2. For manual installation from that DMG, drag **Explorer.app** onto **Applications**. Run **Open Language Packs Folder.command**, then copy the desired `.lproj` folders from **Localizations** into the Finder window it opens.
 3. Open Explorer from **Applications**. Go to **Settings → General → Interface language**. Leave **Automatic (macOS)** selected to follow your primary system language, or choose a language and click **Apply and Restart**.
 
@@ -60,7 +66,7 @@ Two panes make it easy to work across folders, with independent tabs and views.
 You need **macOS 14 or later** and a **Swift 6 toolchain** from Xcode or Xcode Command Line Tools.
 
 ```sh
-git clone --branch multilingual-localization https://github.com/andyzoer/MacExplorer.git
+git clone --branch personal-enhancements https://github.com/andyzoer/MacExplorer.git
 cd MacExplorer
 zsh scripts/build.sh
 open build/Explorer.app
