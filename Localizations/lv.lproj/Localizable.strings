@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Trūkst vienuma, kas nepieciešams atsaukšanai: %1$@";
 "Another file operation is running." = "Notiek cita faila darbība.";
 "Appearance" = "Izskats";
-"Application" = "Pieteikums";
+"Application" = "Lietotne";
 "Applications" = "Pieteikumi";
 "Apply and Restart" = "Lietot un restartēt";
 "Apply to all remaining conflicts" = "Attiecas uz visiem atlikušajiem konfliktiem";
@@ -422,3 +422,31 @@
 "Yesterday" = "Vakar";
 "macOS did not return the item's Trash location." = "macOS neatgrieza vienuma atkritnes atrašanās vietu.";
 "“%1$@” already exists" = "“%1$@” jau pastāv";
+
+/* Create menu and document templates */
+"Add Format…" = "Pievienot formātu…";
+"Add a document template in Settings → Create." = "Pievienojiet dokumenta veidni sadaļā Iestatījumi → Izveidot.";
+"Alias" = "Aizstājvārds (saīsne)";
+"Alias…" = "Aizstājvārds (saīsne)…";
+"Choose a regular document with a file extension." = "Izvēlieties parastu dokumentu ar faila paplašinājumu.";
+"Choose the file or folder for the alias." = "Izvēlieties aizstājvārda failu vai mapi.";
+"Configure Create Menu…" = "Konfigurēt izveides izvēlni…";
+"Create files" = "Izveidojiet failus";
+"Empty text file" = "Tukšs teksta fails";
+"Excel Workbook" = "Excel darbgrāmata";
+"Illustrator Document" = "Illustrator dokuments";
+"Import Template…" = "Importēt veidni…";
+"Import a template to enable this format." = "Importējiet veidni, lai iespējotu šo formātu.";
+"Menu title" = "Izvēlnes nosaukums";
+"No compatible application found." = "Nav atrasta saderīga lietojumprogramma.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office formātos tiek izmantoti tukši dokumenti un jebkura reģistrēta saderīga lietotne. PSD, AI vai citiem formātiem importējiet tukšu dokumentu, ko saglabājis jūsu redaktors. Explorer kopē veidnes, tās nepalaižot.";
+"Open after creation" = "Atvērts pēc izveides";
+"Photoshop Document" = "Photoshop dokuments";
+"PowerPoint Presentation" = "PowerPoint prezentācija";
+"Remove Format" = "Noņemt formātu";
+"Show in Create menu" = "Rādīt izvēlnē Izveidot";
+"System default" = "Sistēmas noklusējuma iestatījumi";
+"Template" = "Veidne";
+"Text Document" = "Teksta dokuments";
+"Use System Default" = "Izmantojiet sistēmas noklusējumu";
+"Word Document" = "Word dokuments";

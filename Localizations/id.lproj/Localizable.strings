@@ -422,3 +422,31 @@
 "Yesterday" = "Kemarin";
 "macOS did not return the item's Trash location." = "macOS tidak mengembalikan lokasi Sampah item.";
 "“%1$@” already exists" = "“%1$@” sudah ada";
+
+/* Create menu and document templates */
+"Add Format…" = "Tambahkan Format…";
+"Add a document template in Settings → Create." = "Tambahkan templat dokumen di Pengaturan → Buat.";
+"Alias" = "Alias (pintasan)";
+"Alias…" = "Alias (pintasan)…";
+"Choose a regular document with a file extension." = "Pilih dokumen biasa dengan ekstensi file.";
+"Choose the file or folder for the alias." = "Pilih file atau folder untuk alias.";
+"Configure Create Menu…" = "Konfigurasikan Buat Menu…";
+"Create files" = "Buat file";
+"Empty text file" = "File teks kosong";
+"Excel Workbook" = "Buku Kerja Excel";
+"Illustrator Document" = "Dokumen Illustrator";
+"Import Template…" = "Impor Templat…";
+"Import a template to enable this format." = "Impor templat untuk mengaktifkan format ini.";
+"Menu title" = "Judul menu";
+"No compatible application found." = "Tidak ditemukan aplikasi yang kompatibel.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Format Office menggunakan dokumen kosong dan aplikasi kompatibel apa pun yang terdaftar. Untuk PSD, AI atau format lainnya, impor dokumen kosong yang disimpan oleh editor Anda. Explorer menyalin templat tanpa menjalankannya.";
+"Open after creation" = "Buka setelah pembuatan";
+"Photoshop Document" = "Dokumen Photoshop";
+"PowerPoint Presentation" = "Presentasi PowerPoint";
+"Remove Format" = "Hapus Format";
+"Show in Create menu" = "Tampilkan di menu Buat";
+"System default" = "Default sistem";
+"Template" = "Templat";
+"Text Document" = "Dokumen Teks";
+"Use System Default" = "Gunakan Default Sistem";
+"Word Document" = "Dokumen Word";

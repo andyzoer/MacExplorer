@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Undo-სთვის საჭირო ელემენტი აკლია: %1$@";
 "Another file operation is running." = "ფაილის სხვა ოპერაცია გაშვებულია.";
 "Appearance" = "გარეგნობა";
-"Application" = "განაცხადი";
+"Application" = "აპლიკაცია";
 "Applications" = "აპლიკაციები";
 "Apply and Restart" = "გამოყენება და გადატვირთვა";
 "Apply to all remaining conflicts" = "ვრცელდება ყველა დარჩენილ კონფლიქტზე";
@@ -422,3 +422,31 @@
 "Yesterday" = "გუშინ";
 "macOS did not return the item's Trash location." = "macOS არ დააბრუნა ელემენტის ნაგვის მდებარეობა.";
 "“%1$@” already exists" = "„%1$@“ უკვე არსებობს";
+
+/* Create menu and document templates */
+"Add Format…" = "ფორმატის დამატება…";
+"Add a document template in Settings → Create." = "დაამატეთ დოკუმენტის შაბლონი პარამეტრებში → შექმნა.";
+"Alias" = "მალსახმობი (alias)";
+"Alias…" = "მალსახმობი (alias)…";
+"Choose a regular document with a file extension." = "აირჩიეთ ჩვეულებრივი დოკუმენტი ფაილის გაფართოებით.";
+"Choose the file or folder for the alias." = "აირჩიეთ ფაილი ან საქაღალდე მეტსახელისთვის.";
+"Configure Create Menu…" = "შექმნის მენიუს კონფიგურაცია…";
+"Create files" = "შექმენით ფაილები";
+"Empty text file" = "ცარიელი ტექსტური ფაილი";
+"Excel Workbook" = "Excel სამუშაო წიგნი";
+"Illustrator Document" = "Illustrator დოკუმენტი";
+"Import Template…" = "შაბლონის იმპორტი…";
+"Import a template to enable this format." = "შაბლონის იმპორტი ამ ფორმატის გასააქტიურებლად.";
+"Menu title" = "მენიუს სათაური";
+"No compatible application found." = "თავსებადი აპლიკაცია ვერ მოიძებნა.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office ფორმატებში გამოიყენება ცარიელი დოკუმენტები და ნებისმიერი რეგისტრირებული თავსებადი აპლიკაცია. PSD, AI ან სხვა ფორმატებისთვის, შემოიტანეთ თქვენი რედაქტორის მიერ შენახული ცარიელი დოკუმენტი. Explorer აკოპირებს შაბლონებს მათი გაშვების გარეშე.";
+"Open after creation" = "გახსნა შექმნის შემდეგ";
+"Photoshop Document" = "Photoshop დოკუმენტი";
+"PowerPoint Presentation" = "PowerPoint პრეზენტაცია";
+"Remove Format" = "ფორმატის წაშლა";
+"Show in Create menu" = "ჩვენება Create მენიუში";
+"System default" = "სისტემის ნაგულისხმევი";
+"Template" = "თარგი";
+"Text Document" = "ტექსტური დოკუმენტი";
+"Use System Default" = "გამოიყენეთ სისტემის ნაგულისხმევი";
+"Word Document" = "Word დოკუმენტი";

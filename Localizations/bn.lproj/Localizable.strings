@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "পূর্বাবস্থার জন্য প্রয়োজনীয় একটি আইটেম অনুপস্থিত: %1$@";
 "Another file operation is running." = "আরেকটি ফাইল অপারেশন চলছে।";
 "Appearance" = "চেহারা";
-"Application" = "আবেদন";
+"Application" = "অ্যাপ্লিকেশন";
 "Applications" = "অ্যাপ্লিকেশন";
 "Apply and Restart" = "প্রয়োগ করে পুনরায় চালু করুন";
 "Apply to all remaining conflicts" = "সমস্ত অবশিষ্ট দ্বন্দ্বে প্রয়োগ করুন";
@@ -422,3 +422,31 @@
 "Yesterday" = "গতকাল";
 "macOS did not return the item's Trash location." = "macOS আইটেমের ট্র্যাশ অবস্থান ফেরত দেয়নি৷";
 "“%1$@” already exists" = "“%1$@” ইতিমধ্যেই বিদ্যমান";
+
+/* Create menu and document templates */
+"Add Format…" = "বিন্যাস যোগ করুন…";
+"Add a document template in Settings → Create." = "সেটিংসে একটি ডকুমেন্ট টেমপ্লেট যোগ করুন → তৈরি করুন।";
+"Alias" = "শর্টকাট (alias)";
+"Alias…" = "শর্টকাট (alias)…";
+"Choose a regular document with a file extension." = "একটি ফাইল এক্সটেনশন সহ একটি নিয়মিত নথি চয়ন করুন।";
+"Choose the file or folder for the alias." = "উপনামের জন্য ফাইল বা ফোল্ডার চয়ন করুন।";
+"Configure Create Menu…" = "মেনু তৈরি করুন কনফিগার করুন…";
+"Create files" = "ফাইল তৈরি করুন";
+"Empty text file" = "খালি টেক্সট ফাইল";
+"Excel Workbook" = "Excel ওয়ার্কবুক";
+"Illustrator Document" = "Illustrator নথি";
+"Import Template…" = "টেমপ্লেট আমদানি করুন…";
+"Import a template to enable this format." = "এই বিন্যাসটি সক্ষম করতে একটি টেমপ্লেট আমদানি করুন।";
+"Menu title" = "মেনু শিরোনাম";
+"No compatible application found." = "কোনো সামঞ্জস্যপূর্ণ অ্যাপ্লিকেশন পাওয়া যায়নি।";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office ফর্ম্যাটগুলি ফাঁকা নথি এবং যেকোনো নিবন্ধিত সামঞ্জস্যপূর্ণ অ্যাপ ব্যবহার করে। PSD, AI বা অন্যান্য ফর্ম্যাটের জন্য, আপনার সম্পাদক দ্বারা সংরক্ষিত একটি ফাঁকা নথি আমদানি করুন৷ Explorer টেমপ্লেটগুলিকে না চালিয়ে কপি করে৷";
+"Open after creation" = "সৃষ্টির পর খুলুন";
+"Photoshop Document" = "Photoshop নথি";
+"PowerPoint Presentation" = "PowerPoint উপস্থাপনা";
+"Remove Format" = "বিন্যাস সরান";
+"Show in Create menu" = "তৈরি মেনুতে দেখান";
+"System default" = "সিস্টেম ডিফল্ট";
+"Template" = "টেমপ্লেট";
+"Text Document" = "পাঠ্য নথি";
+"Use System Default" = "সিস্টেম ডিফল্ট ব্যবহার করুন";
+"Word Document" = "Word নথি";

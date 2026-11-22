@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Nedostaje jedna postavka koja je od strane Undo-a potrebna: %1$@";
 "Another file operation is running." = "Još jedna operacija datoteka je u toku.";
 "Appearance" = "Izgled";
-"Application" = "Upotreba";
+"Application" = "Aplikacija";
 "Applications" = "Prijave";
 "Apply and Restart" = "Primijeni i ponovno pokreni";
 "Apply to all remaining conflicts" = "Primjenjuje se na sve preostale sukobe";
@@ -422,3 +422,31 @@
 "Yesterday" = "Jučer.";
 "macOS did not return the item's Trash location." = "macOS nije vratila mjesto gdje se stavka nalazi.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  već postoji";
+
+/* Create menu and document templates */
+"Add Format…" = "Dodaj format…";
+"Add a document template in Settings → Create." = "Dodajte predložak dokumenta u Postavke → Stvori.";
+"Alias" = "Alias (prečac)";
+"Alias…" = "Alias (prečac)…";
+"Choose a regular document with a file extension." = "Odaberite obični dokument s ekstenzijom datoteke.";
+"Choose the file or folder for the alias." = "Odaberite datoteku ili mapu za alias.";
+"Configure Create Menu…" = "Konfiguriraj izbornik Stvori…";
+"Create files" = "Stvorite datoteke";
+"Empty text file" = "Prazna tekstualna datoteka";
+"Excel Workbook" = "Excel Radna bilježnica";
+"Illustrator Document" = "Dokument Illustrator";
+"Import Template…" = "Uvoz predloška…";
+"Import a template to enable this format." = "Uvezite predložak da omogućite ovaj format.";
+"Menu title" = "Naslov izbornika";
+"No compatible application found." = "Nije pronađena kompatibilna aplikacija.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Formati Office koriste prazne dokumente i sve registrirane kompatibilne aplikacije. Za PSD, AI ili druge formate, uvezite prazan dokument koji je spremio vaš uređivač. Explorer kopira predloške bez pokretanja.";
+"Open after creation" = "Otvori nakon izrade";
+"Photoshop Document" = "Dokument Photoshop";
+"PowerPoint Presentation" = "PowerPoint prezentacija";
+"Remove Format" = "Ukloni format";
+"Show in Create menu" = "Prikaži u izborniku Stvori";
+"System default" = "Zadana vrijednost sustava";
+"Template" = "Predložak";
+"Text Document" = "Tekstualni dokument";
+"Use System Default" = "Koristi zadane postavke sustava";
+"Word Document" = "Dokument Word";

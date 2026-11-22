@@ -422,3 +422,31 @@
 "Yesterday" = "أمس";
 "macOS did not return the item's Trash location." = "لم يُرجع macOS موقع سلة المهملات الخاص بالعنصر.";
 "“%1$@” already exists" = "\"%1$@\" موجود بالفعل";
+
+/* Create menu and document templates */
+"Add Format…" = "إضافة تنسيق…";
+"Add a document template in Settings → Create." = "أضف قالب مستند في الإعدادات → إنشاء.";
+"Alias" = "اختصار (alias)";
+"Alias…" = "اختصار (alias)…";
+"Choose a regular document with a file extension." = "اختر مستندًا عاديًا بامتداد الملف.";
+"Choose the file or folder for the alias." = "اختر الملف أو المجلد للاسم المستعار.";
+"Configure Create Menu…" = "إعداد قائمة «إنشاء»…";
+"Create files" = "إنشاء الملفات";
+"Empty text file" = "ملف نصي فارغ";
+"Excel Workbook" = "مصنف Excel";
+"Illustrator Document" = "وثيقة Illustrator";
+"Import Template…" = "استيراد القالب…";
+"Import a template to enable this format." = "قم باستيراد قالب لتمكين هذا التنسيق.";
+"Menu title" = "عنوان القائمة";
+"No compatible application found." = "لم يتم العثور على تطبيق متوافق.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "تستخدم تنسيقات Office مستندات فارغة وأي تطبيق متوافق مسجل. بالنسبة إلى تنسيقات PSD أو AI أو التنسيقات الأخرى، قم باستيراد مستند فارغ محفوظ بواسطة المحرر الخاص بك. يقوم Explorer بنسخ القوالب دون تشغيلها.";
+"Open after creation" = "الفتح بعد الإنشاء";
+"Photoshop Document" = "وثيقة Photoshop";
+"PowerPoint Presentation" = "عرض PowerPoint";
+"Remove Format" = "إزالة التنسيق";
+"Show in Create menu" = "إظهار في قائمة إنشاء";
+"System default" = "التطبيق الافتراضي للنظام";
+"Template" = "القالب";
+"Text Document" = "وثيقة نصية";
+"Use System Default" = "استخدام التطبيق الافتراضي للنظام";
+"Word Document" = "وثيقة Word";

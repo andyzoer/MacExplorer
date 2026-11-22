@@ -422,3 +422,31 @@
 "Yesterday" = "Вчера";
 "macOS did not return the item's Trash location." = "macOS не върна местоположението на кошчето на елемента.";
 "“%1$@” already exists" = "„%1$@“ вече съществува";
+
+/* Create menu and document templates */
+"Add Format…" = "Добавяне на формат…";
+"Add a document template in Settings → Create." = "Добавете шаблон на документ в Настройки → Създаване.";
+"Alias" = "Пряк път (alias)";
+"Alias…" = "Пряк път (alias)…";
+"Choose a regular document with a file extension." = "Изберете обикновен документ с файлово разширение.";
+"Choose the file or folder for the alias." = "Изберете файла или папката за псевдонима.";
+"Configure Create Menu…" = "Конфигуриране на меню за създаване…";
+"Create files" = "Създаване на файлове";
+"Empty text file" = "Празен текстов файл";
+"Excel Workbook" = "Excel Работна тетрадка";
+"Illustrator Document" = "Illustrator документ";
+"Import Template…" = "Импортиране на шаблон…";
+"Import a template to enable this format." = "Импортирайте шаблон, за да активирате този формат.";
+"Menu title" = "Заглавие на менюто";
+"No compatible application found." = "Не е намерено съвместимо приложение.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Форматите Office използват празни документи и всяко регистрирано съвместимо приложение. За PSD, AI или други формати импортирайте празен документ, записан от вашия редактор. Explorer копира шаблони, без да ги изпълнява.";
+"Open after creation" = "Отваряне след създаване";
+"Photoshop Document" = "Photoshop документ";
+"PowerPoint Presentation" = "PowerPoint Презентация";
+"Remove Format" = "Премахване на формат";
+"Show in Create menu" = "Показване в менюто Създаване";
+"System default" = "Система по подразбиране";
+"Template" = "Шаблон";
+"Text Document" = "Текстов документ";
+"Use System Default" = "Използване на системата по подразбиране";
+"Word Document" = "Word документ";

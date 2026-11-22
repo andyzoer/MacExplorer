@@ -422,3 +422,31 @@
 "Yesterday" = "אתמול.";
 "macOS did not return the item's Trash location." = "macOS לא החזיר את מיקום הזבל של הפריט.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  כבר קיים";
+
+/* Create menu and document templates */
+"Add Format…" = "הוסף פורמט…";
+"Add a document template in Settings → Create." = "הוסף תבנית מסמך בהגדרות ← צור.";
+"Alias" = "כינוי (קיצור דרך)";
+"Alias…" = "כינוי (קיצור דרך)…";
+"Choose a regular document with a file extension." = "בחר מסמך רגיל עם סיומת קובץ.";
+"Choose the file or folder for the alias." = "בחר את הקובץ או התיקיה עבור הכינוי.";
+"Configure Create Menu…" = "הגדר תפריט יצירה…";
+"Create files" = "צור קבצים";
+"Empty text file" = "קובץ טקסט ריק";
+"Excel Workbook" = "חוברת עבודה Excel";
+"Illustrator Document" = "מסמך Illustrator";
+"Import Template…" = "ייבוא תבנית…";
+"Import a template to enable this format." = "ייבא תבנית כדי להפעיל את הפורמט הזה.";
+"Menu title" = "כותרת התפריט";
+"No compatible application found." = "לא נמצאה אפליקציה תואמת.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "פורמטים של Office משתמשים במסמכים ריקים ובכל אפליקציה תואמת רשומה. עבור PSD, AI או פורמטים אחרים, ייבא מסמך ריק שנשמר על ידי העורך שלך. Explorer מעתיק תבניות מבלי להפעיל אותן.";
+"Open after creation" = "נפתח לאחר היצירה";
+"Photoshop Document" = "מסמך Photoshop";
+"PowerPoint Presentation" = "מצגת PowerPoint";
+"Remove Format" = "הסר פורמט";
+"Show in Create menu" = "הצג בתפריט צור";
+"System default" = "ברירת המחדל של המערכת";
+"Template" = "תבנית";
+"Text Document" = "מסמך טקסט";
+"Use System Default" = "השתמש בברירת המחדל של המערכת";
+"Word Document" = "מסמך Word";

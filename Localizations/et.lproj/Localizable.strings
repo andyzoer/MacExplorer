@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Tagasivõtmiseks vajalik üksus puudub: %1$@";
 "Another file operation is running." = "Käimas on veel üks failitoiming.";
 "Appearance" = "Välimus";
-"Application" = "Taotlus";
+"Application" = "Rakendus";
 "Applications" = "Taotlused";
 "Apply and Restart" = "Rakenda ja taaskäivita";
 "Apply to all remaining conflicts" = "Rakenda kõikidele ülejäänud konfliktidele";
@@ -422,3 +422,31 @@
 "Yesterday" = "Eile";
 "macOS did not return the item's Trash location." = "macOS ei tagastanud üksuse prügikasti asukohta.";
 "“%1$@” already exists" = "\"%1$@\" on juba olemas";
+
+/* Create menu and document templates */
+"Add Format…" = "Lisa vorming…";
+"Add a document template in Settings → Create." = "Lisage dokumendimall menüüs Seaded → Loo.";
+"Alias" = "Otsetee (alias)";
+"Alias…" = "Otsetee (alias)…";
+"Choose a regular document with a file extension." = "Valige tavaline faililaiendiga dokument.";
+"Choose the file or folder for the alias." = "Valige aliase fail või kaust.";
+"Configure Create Menu…" = "Loo menüü seadistamine…";
+"Create files" = "Loo failid";
+"Empty text file" = "Tühi tekstifail";
+"Excel Workbook" = "Excel töövihik";
+"Illustrator Document" = "Illustrator dokument";
+"Import Template…" = "Malli importimine…";
+"Import a template to enable this format." = "Selle vormingu lubamiseks importige mall.";
+"Menu title" = "Menüü pealkiri";
+"No compatible application found." = "Ühilduvat rakendust ei leitud.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office vormingud kasutavad tühje dokumente ja mis tahes registreeritud ühilduvaid rakendusi. PSD, AI või muude vormingute jaoks importige redaktori salvestatud tühi dokument. Explorer kopeerib malle neid käivitamata.";
+"Open after creation" = "Avatud pärast loomist";
+"Photoshop Document" = "Photoshop dokument";
+"PowerPoint Presentation" = "PowerPoint esitlus";
+"Remove Format" = "Eemalda vorming";
+"Show in Create menu" = "Kuva menüüs Loo";
+"System default" = "Süsteemi vaikeseade";
+"Template" = "Mall";
+"Text Document" = "Tekstdokument";
+"Use System Default" = "Kasuta süsteemi vaikeseadet";
+"Word Document" = "Word dokument";

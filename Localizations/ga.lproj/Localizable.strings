@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Tá mír a theastaíonn ó Undo ag iarraidh: %1$@";
 "Another file operation is running." = "Tá oibríocht comhaid eile ag rith.";
 "Appearance" = "Breathnaíonn";
-"Application" = "Iarratais";
+"Application" = "Feidhmchlár";
 "Applications" = "Iarratais";
 "Apply and Restart" = "Cuir i bhfeidhm agus atosaigh";
 "Apply to all remaining conflicts" = "Cuirfear i bhfeidhm ar gach coimhlint atá fágtha";
@@ -422,3 +422,31 @@
 "Yesterday" = "An-dè";
 "macOS did not return the item's Trash location." = "macOS níor chuir an t-alt ar ais an suíomh an Trash.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  atá ann cheana féin";
+
+/* Create menu and document templates */
+"Add Format…" = "Cuir Formáid Leis…";
+"Add a document template in Settings → Create." = "Cuir teimpléad doiciméid leis i Socruithe → Cruthaigh.";
+"Alias" = "Ailias";
+"Alias…" = "Ailias…";
+"Choose a regular document with a file extension." = "Roghnaigh doiciméad rialta a bhfuil iarmhír chomhaid ann.";
+"Choose the file or folder for the alias." = "Roghnaigh an comhad nó fillteán don ailias.";
+"Configure Create Menu…" = "Cumraigh Cruthaigh Roghchlár…";
+"Create files" = "Cruthaigh comhaid";
+"Empty text file" = "Téacschomhad folamh";
+"Excel Workbook" = "Leabhar Saothair Excel";
+"Illustrator Document" = "Doiciméad Illustrator";
+"Import Template…" = "Teimpléad Iompórtála…";
+"Import a template to enable this format." = "Iompórtáil teimpléad chun an fhormáid seo a chumasú.";
+"Menu title" = "Teideal an roghchláir";
+"No compatible application found." = "Níor aimsíodh aon fheidhmchlár comhoiriúnach.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Úsáideann formáidí Office doiciméid bhána agus aon aip chláraithe chomhoiriúnach. I gcás PSD, AI nó formáidí eile, iompórtáil doiciméad bán arna shábháil ag d’eagarthóir. Cóipeáil teimpléid Explorer gan iad a rith.";
+"Open after creation" = "Oscail i ndiaidh an chruthaithe";
+"Photoshop Document" = "Doiciméad Photoshop";
+"PowerPoint Presentation" = "Léiriú PowerPoint";
+"Remove Format" = "Bain Formáid";
+"Show in Create menu" = "Taispeáin sa roghchlár Create";
+"System default" = "Réamhshocrú córais";
+"Template" = "Teimpléad";
+"Text Document" = "Téacs-Doiciméad";
+"Use System Default" = "Úsáid Réamhshocrú an Chórais";
+"Word Document" = "Doiciméad Word";

@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "En post som trengs av Undo mangler: %1$@";
 "Another file operation is running." = "En annen filoperasjon er i gang.";
 "Appearance" = "Utseende";
-"Application" = "Ansøgning";
+"Application" = "Program";
 "Applications" = "Ansøk";
 "Apply and Restart" = "Bruk og start på nytt";
 "Apply to all remaining conflicts" = "Gjelder alle gjenværende konflikter";
@@ -422,3 +422,31 @@
 "Yesterday" = "I går";
 "macOS did not return the item's Trash location." = "macOS returnerte ikke posisjonen av søppelposten.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  eksisterer allerede";
+
+/* Create menu and document templates */
+"Add Format…" = "Legg til format…";
+"Add a document template in Settings → Create." = "Legg til en dokumentmal i Innstillinger → Opprett.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Velg et vanlig dokument med filtype.";
+"Choose the file or folder for the alias." = "Velg filen eller mappen for aliaset.";
+"Configure Create Menu…" = "Konfigurer Opprett-meny…";
+"Create files" = "Opprett filer";
+"Empty text file" = "Tom tekstfil";
+"Excel Workbook" = "Excel arbeidsbok";
+"Illustrator Document" = "Illustrator-dokument";
+"Import Template…" = "Importer mal…";
+"Import a template to enable this format." = "Importer en mal for å aktivere dette formatet.";
+"Menu title" = "Menytittel";
+"No compatible application found." = "Ingen kompatibel applikasjon funnet.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office-formater bruker tomme dokumenter og alle registrerte kompatible apper. For PSD, AI eller andre formater, importer et tomt dokument lagret av redaktøren. Explorer kopierer maler uten å kjøre dem.";
+"Open after creation" = "Åpne etter opprettelse";
+"Photoshop Document" = "Photoshop-dokument";
+"PowerPoint Presentation" = "PowerPoint Presentasjon";
+"Remove Format" = "Fjern format";
+"Show in Create menu" = "Vis i Opprett-menyen";
+"System default" = "Systemstandard";
+"Template" = "Mal";
+"Text Document" = "Tekstdokument";
+"Use System Default" = "Bruk systemstandard";
+"Word Document" = "Word-dokument";

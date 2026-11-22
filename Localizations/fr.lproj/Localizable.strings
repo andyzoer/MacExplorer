@@ -422,3 +422,31 @@
 "Yesterday" = "Hier";
 "macOS did not return the item's Trash location." = "macOS n’a pas indiqué où l’élément se trouve dans la corbeille.";
 "“%1$@” already exists" = "« %1$@ » existe déjà";
+
+/* Create menu and document templates */
+"Add Format…" = "Ajouter un format…";
+"Add a document template in Settings → Create." = "Ajoutez un modèle de document dans Réglages → Créer.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Choisissez un document normal avec une extension de fichier.";
+"Choose the file or folder for the alias." = "Choisissez le fichier ou le dossier pour l'alias.";
+"Configure Create Menu…" = "Configurer le menu Créer…";
+"Create files" = "Créer des fichiers";
+"Empty text file" = "Fichier texte vide";
+"Excel Workbook" = "Classeur Excel";
+"Illustrator Document" = "Document Illustrator";
+"Import Template…" = "Importer un modèle…";
+"Import a template to enable this format." = "Importez un modèle pour activer ce format.";
+"Menu title" = "Titre du menu";
+"No compatible application found." = "Aucune application compatible trouvée.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Les formats Office utilisent des documents vierges et toute application compatible enregistrée. Pour PSD, AI ou autres formats, importez un document vierge enregistré par votre éditeur. Explorer copie les modèles sans les exécuter.";
+"Open after creation" = "Ouvrir après création";
+"Photoshop Document" = "Document Photoshop";
+"PowerPoint Presentation" = "PowerPoint Présentation";
+"Remove Format" = "Supprimer le format";
+"Show in Create menu" = "Afficher dans le menu Créer";
+"System default" = "Application par défaut du système";
+"Template" = "Modèle";
+"Text Document" = "Document texte";
+"Use System Default" = "Utiliser l’application par défaut du système";
+"Word Document" = "Document Word";

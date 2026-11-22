@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Geri Al'ın ihtiyaç duyduğu bir öğe eksik: %1$@";
 "Another file operation is running." = "Başka bir dosya işlemi çalışıyor.";
 "Appearance" = "Görünüm";
-"Application" = "Başvuru";
+"Application" = "Uygulama";
 "Applications" = "Uygulamalar";
 "Apply and Restart" = "Uygula ve yeniden başlat";
 "Apply to all remaining conflicts" = "Kalan tüm çakışmalara uygula";
@@ -422,3 +422,31 @@
 "Yesterday" = "Dün";
 "macOS did not return the item's Trash location." = "macOS, öğenin Çöp Kutusu konumunu döndürmedi.";
 "“%1$@” already exists" = "“%1$@” zaten mevcut";
+
+/* Create menu and document templates */
+"Add Format…" = "Format Ekle…";
+"Add a document template in Settings → Create." = "Ayarlar → Oluştur'a bir belge şablonu ekleyin.";
+"Alias" = "Takma ad (kısayol)";
+"Alias…" = "Takma ad (kısayol)…";
+"Choose a regular document with a file extension." = "Dosya uzantısına sahip normal bir belge seçin.";
+"Choose the file or folder for the alias." = "Takma ad için dosya veya klasörü seçin.";
+"Configure Create Menu…" = "Oluşturma Menüsünü Yapılandır…";
+"Create files" = "Dosya oluştur";
+"Empty text file" = "Boş metin dosyası";
+"Excel Workbook" = "Excel Çalışma Kitabı";
+"Illustrator Document" = "Illustrator Belgesi";
+"Import Template…" = "Şablonu İçe Aktar…";
+"Import a template to enable this format." = "Bu formatı etkinleştirmek için bir şablonu içe aktarın.";
+"Menu title" = "Menü başlığı";
+"No compatible application found." = "Uyumlu bir uygulama bulunamadı.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office formatları boş belgeleri ve kayıtlı herhangi bir uyumlu uygulamayı kullanır. PSD, AI veya diğer formatlar için editörünüz tarafından kaydedilen boş bir belgeyi içe aktarın. Explorer şablonları çalıştırmadan kopyalar.";
+"Open after creation" = "Oluşturulduktan sonra aç";
+"Photoshop Document" = "Photoshop Belgesi";
+"PowerPoint Presentation" = "PowerPoint Sunumu";
+"Remove Format" = "Formatı Kaldır";
+"Show in Create menu" = "Oluştur menüsünde göster";
+"System default" = "Sistem varsayılanı";
+"Template" = "Şablon";
+"Text Document" = "Metin Belgesi";
+"Use System Default" = "Sistem Varsayılanını Kullan";
+"Word Document" = "Word Belgesi";

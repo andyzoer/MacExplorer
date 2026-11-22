@@ -422,3 +422,31 @@
 "Yesterday" = "Gisteren";
 "macOS did not return the item's Trash location." = "macOS heeft de prullenbaklocatie van het item niet geretourneerd.";
 "“%1$@” already exists" = "“%1$@” bestaat al";
+
+/* Create menu and document templates */
+"Add Format…" = "Formaat toevoegen…";
+"Add a document template in Settings → Create." = "Voeg een documentsjabloon toe in Instellingen → Maken.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Kies een normaal document met een bestandsextensie.";
+"Choose the file or folder for the alias." = "Kies het bestand of de map voor de alias.";
+"Configure Create Menu…" = "Configureer Menu maken…";
+"Create files" = "Bestanden maken";
+"Empty text file" = "Leeg tekstbestand";
+"Excel Workbook" = "Excel Werkmap";
+"Illustrator Document" = "Illustrator-document";
+"Import Template…" = "Sjabloon importeren…";
+"Import a template to enable this format." = "Importeer een sjabloon om dit formaat in te schakelen.";
+"Menu title" = "Menutitel";
+"No compatible application found." = "Geen compatibele applicatie gevonden.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office-formaten gebruiken blanco documenten en elke geregistreerde compatibele app. Voor PSD, AI of andere formaten importeert u een leeg document dat is opgeslagen door uw editor. Explorer kopieert sjablonen zonder ze uit te voeren.";
+"Open after creation" = "Open na creatie";
+"Photoshop Document" = "Photoshop-document";
+"PowerPoint Presentation" = "PowerPoint Presentatie";
+"Remove Format" = "Formaat verwijderen";
+"Show in Create menu" = "Weergeven in menu Maken";
+"System default" = "Systeemstandaard";
+"Template" = "Sjabloon";
+"Text Document" = "Tekstdocument";
+"Use System Default" = "Gebruik systeemstandaard";
+"Word Document" = "Word-document";

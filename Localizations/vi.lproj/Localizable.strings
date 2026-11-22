@@ -422,3 +422,31 @@
 "Yesterday" = "Hôm qua";
 "macOS did not return the item's Trash location." = "macOS không trả lại vị trí Thùng rác của mục.";
 "“%1$@” already exists" = "“%1$@” đã tồn tại";
+
+/* Create menu and document templates */
+"Add Format…" = "Thêm định dạng…";
+"Add a document template in Settings → Create." = "Thêm mẫu tài liệu trong Cài đặt → Tạo.";
+"Alias" = "Bí danh (lối tắt)";
+"Alias…" = "Bí danh (lối tắt)…";
+"Choose a regular document with a file extension." = "Chọn tài liệu thông thường có phần mở rộng tệp.";
+"Choose the file or folder for the alias." = "Chọn tệp hoặc thư mục cho bí danh.";
+"Configure Create Menu…" = "Cấu hình Tạo Menu…";
+"Create files" = "Tạo tập tin";
+"Empty text file" = "Tệp văn bản trống";
+"Excel Workbook" = "Sổ làm việc Excel";
+"Illustrator Document" = "Tài liệu Illustrator";
+"Import Template…" = "Nhập mẫu…";
+"Import a template to enable this format." = "Nhập mẫu để kích hoạt định dạng này.";
+"Menu title" = "Tiêu đề thực đơn";
+"No compatible application found." = "Không tìm thấy ứng dụng tương thích.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Định dạng Office sử dụng tài liệu trống và mọi ứng dụng tương thích đã đăng ký. Đối với PSD, AI hoặc các định dạng khác, hãy nhập tài liệu trống được trình chỉnh sửa của bạn lưu. Explorer sao chép các mẫu mà không chạy chúng.";
+"Open after creation" = "Mở sau khi tạo";
+"Photoshop Document" = "Tài liệu Photoshop";
+"PowerPoint Presentation" = "PowerPoint Trình bày";
+"Remove Format" = "Xóa định dạng";
+"Show in Create menu" = "Hiển thị trong menu Tạo";
+"System default" = "Mặc định hệ thống";
+"Template" = "Mẫu";
+"Text Document" = "Tài liệu văn bản";
+"Use System Default" = "Sử dụng mặc định hệ thống";
+"Word Document" = "Tài liệu Word";

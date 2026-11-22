@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "انڈو کی ضرورت کی ایک شے غائب ہے: %1$@";
 "Another file operation is running." = "ایک اور فائل آپریشن چل رہا ہے.";
 "Appearance" = "ظہور";
-"Application" = "درخواست";
+"Application" = "ایپلیکیشن";
 "Applications" = "درخواستیں";
 "Apply and Restart" = "لاگو کریں اور دوبارہ شروع کریں";
 "Apply to all remaining conflicts" = "باقی تمام تنازعات پر لاگو";
@@ -422,3 +422,31 @@
 "Yesterday" = "کل";
 "macOS did not return the item's Trash location." = "macOS نے آئٹم کا کوڑے دان کا مقام واپس نہیں کیا۔";
 "“%1$@” already exists" = "\"%1$@\" پہلے سے موجود ہے۔";
+
+/* Create menu and document templates */
+"Add Format…" = "فارمیٹ شامل کریں…";
+"Add a document template in Settings → Create." = "سیٹنگز → تخلیق میں ایک دستاویز ٹیمپلیٹ شامل کریں۔";
+"Alias" = "شارٹ کٹ (alias)";
+"Alias…" = "شارٹ کٹ (alias)…";
+"Choose a regular document with a file extension." = "فائل ایکسٹینشن کے ساتھ باقاعدہ دستاویز کا انتخاب کریں۔";
+"Choose the file or folder for the alias." = "عرف کے لیے فائل یا فولڈر کا انتخاب کریں۔";
+"Configure Create Menu…" = "مینو بنائیں تشکیل دیں…";
+"Create files" = "فائلیں بنائیں";
+"Empty text file" = "خالی ٹیکسٹ فائل";
+"Excel Workbook" = "Excel ورک بک";
+"Illustrator Document" = "Illustrator دستاویز";
+"Import Template…" = "سانچہ درآمد کریں";
+"Import a template to enable this format." = "اس فارمیٹ کو فعال کرنے کے لیے ایک ٹیمپلیٹ درآمد کریں۔";
+"Menu title" = "مینو کا عنوان";
+"No compatible application found." = "کوئی مطابقت پذیر ایپلیکیشن نہیں ملی۔";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office فارمیٹس خالی دستاویزات اور کوئی رجسٹرڈ مطابقت پذیر ایپ استعمال کرتے ہیں۔ PSD، AI یا دیگر فارمیٹس کے لیے، اپنے ایڈیٹر کے ذریعے محفوظ کردہ خالی دستاویز درآمد کریں۔ Explorer ٹیمپلیٹس کو چلائے بغیر کاپی کرتا ہے۔";
+"Open after creation" = "تخلیق کے بعد کھولیں۔";
+"Photoshop Document" = "Photoshop دستاویز";
+"PowerPoint Presentation" = "PowerPoint پیشکش";
+"Remove Format" = "فارمیٹ کو ہٹا دیں۔";
+"Show in Create menu" = "بنائیں مینو میں دکھائیں۔";
+"System default" = "سسٹم ڈیفالٹ";
+"Template" = "سانچہ";
+"Text Document" = "ٹیکسٹ دستاویز";
+"Use System Default" = "سسٹم ڈیفالٹ استعمال کریں۔";
+"Word Document" = "Word دستاویز";

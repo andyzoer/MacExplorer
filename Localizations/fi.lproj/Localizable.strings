@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Kumoamiseen tarvittava kohde puuttuu: %1$@";
 "Another file operation is running." = "Toinen tiedostotoiminto on käynnissä.";
 "Appearance" = "Ulkonäkö";
-"Application" = "Hakemus";
+"Application" = "Sovellus";
 "Applications" = "Hakemukset";
 "Apply and Restart" = "Käytä ja käynnistä uudelleen";
 "Apply to all remaining conflicts" = "Käytä kaikkia jäljellä olevia ristiriitoja";
@@ -422,3 +422,31 @@
 "Yesterday" = "Eilen";
 "macOS did not return the item's Trash location." = "macOS ei palauttanut kohteen roskakorisijaintia.";
 "“%1$@” already exists" = "\"%1$@\" on jo olemassa";
+
+/* Create menu and document templates */
+"Add Format…" = "Lisää muoto…";
+"Add a document template in Settings → Create." = "Lisää asiakirjamalli kohdassa Asetukset → Luo.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Valitse tavallinen asiakirja, jolla on tiedostopääte.";
+"Choose the file or folder for the alias." = "Valitse aliaksen tiedosto tai kansio.";
+"Configure Create Menu…" = "Määritä Luo-valikko…";
+"Create files" = "Luo tiedostoja";
+"Empty text file" = "Tyhjä tekstitiedosto";
+"Excel Workbook" = "Excel Työkirja";
+"Illustrator Document" = "Illustrator-asiakirja";
+"Import Template…" = "Tuo malli…";
+"Import a template to enable this format." = "Tuo malli ottaaksesi tämän muodon käyttöön.";
+"Menu title" = "Valikon otsikko";
+"No compatible application found." = "Yhteensopivaa sovellusta ei löytynyt.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office-muodot käyttävät tyhjiä asiakirjoja ja kaikkia rekisteröityjä yhteensopivia sovelluksia. PSD-, AI- tai muita muotoja varten tuo editorin tallentama tyhjä asiakirja. Explorer kopioi mallit suorittamatta niitä.";
+"Open after creation" = "Avaa luomisen jälkeen";
+"Photoshop Document" = "Photoshop-asiakirja";
+"PowerPoint Presentation" = "PowerPoint -esitys";
+"Remove Format" = "Poista muoto";
+"Show in Create menu" = "Näytä Luo-valikossa";
+"System default" = "Järjestelmän oletus";
+"Template" = "Malli";
+"Text Document" = "Tekstiasiakirja";
+"Use System Default" = "Käytä järjestelmän oletusarvoa";
+"Word Document" = "Word-asiakirja";

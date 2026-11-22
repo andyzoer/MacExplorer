@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Ett objekt som behövs av Ångra saknas: %1$@";
 "Another file operation is running." = "En annan filoperation körs.";
 "Appearance" = "Utseende";
-"Application" = "Ansökan";
+"Application" = "Program";
 "Applications" = "Applikationer";
 "Apply and Restart" = "Verkställ och starta om";
 "Apply to all remaining conflicts" = "Tillämpa på alla återstående konflikter";
@@ -422,3 +422,31 @@
 "Yesterday" = "Igår";
 "macOS did not return the item's Trash location." = "macOS returnerade inte objektets papperskorg.";
 "“%1$@” already exists" = "\"%1$@\" finns redan";
+
+/* Create menu and document templates */
+"Add Format…" = "Lägg till format…";
+"Add a document template in Settings → Create." = "Lägg till en dokumentmall i Inställningar → Skapa.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Välj ett vanligt dokument med filändelse.";
+"Choose the file or folder for the alias." = "Välj filen eller mappen för aliaset.";
+"Configure Create Menu…" = "Konfigurera Skapa meny…";
+"Create files" = "Skapa filer";
+"Empty text file" = "Tom textfil";
+"Excel Workbook" = "Excel Arbetsbok";
+"Illustrator Document" = "Illustrator Dokument";
+"Import Template…" = "Importera mall…";
+"Import a template to enable this format." = "Importera en mall för att aktivera detta format.";
+"Menu title" = "Menytitel";
+"No compatible application found." = "Ingen kompatibel applikation hittades.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office-format använder tomma dokument och alla registrerade kompatibla appar. För PSD, AI eller andra format, importera ett tomt dokument som sparats av din redigerare. Explorer kopierar mallar utan att köra dem.";
+"Open after creation" = "Öppna efter skapande";
+"Photoshop Document" = "Photoshop Dokument";
+"PowerPoint Presentation" = "PowerPoint Presentation";
+"Remove Format" = "Ta bort format";
+"Show in Create menu" = "Visas i Skapa-menyn";
+"System default" = "Systemstandard";
+"Template" = "Mall";
+"Text Document" = "Textdokument";
+"Use System Default" = "Använd systemstandard";
+"Word Document" = "Word Dokument";

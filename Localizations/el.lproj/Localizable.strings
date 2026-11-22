@@ -422,3 +422,31 @@
 "Yesterday" = "Χθες .";
 "macOS did not return the item's Trash location." = "macOS δεν επιστράφηκε η θέση του στοιχείου \"Τραμπ\".";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  ήδη υπάρχει";
+
+/* Create menu and document templates */
+"Add Format…" = "Προσθήκη μορφής…";
+"Add a document template in Settings → Create." = "Προσθέστε ένα πρότυπο εγγράφου στις Ρυθμίσεις → Δημιουργία.";
+"Alias" = "Συντόμευση (alias)";
+"Alias…" = "Συντόμευση (alias)…";
+"Choose a regular document with a file extension." = "Επιλέξτε ένα κανονικό έγγραφο με επέκταση αρχείου.";
+"Choose the file or folder for the alias." = "Επιλέξτε το αρχείο ή το φάκελο για το ψευδώνυμο.";
+"Configure Create Menu…" = "Ρύθμιση παραμέτρων δημιουργίας μενού…";
+"Create files" = "Δημιουργία αρχείων";
+"Empty text file" = "Κενό αρχείο κειμένου";
+"Excel Workbook" = "Excel Βιβλίο εργασίας";
+"Illustrator Document" = "Έγγραφο Illustrator";
+"Import Template…" = "Εισαγωγή προτύπου…";
+"Import a template to enable this format." = "Εισαγάγετε ένα πρότυπο για να ενεργοποιήσετε αυτήν τη μορφή.";
+"Menu title" = "Τίτλος μενού";
+"No compatible application found." = "Δεν βρέθηκε συμβατή εφαρμογή.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Οι μορφές Office χρησιμοποιούν κενά έγγραφα και οποιαδήποτε εγγεγραμμένη συμβατή εφαρμογή. Για PSD, AI ή άλλες μορφές, εισαγάγετε ένα κενό έγγραφο που έχει αποθηκευτεί από τον επεξεργαστή σας. Το Explorer αντιγράφει πρότυπα χωρίς να τα εκτελεί.";
+"Open after creation" = "Άνοιγμα μετά τη δημιουργία";
+"Photoshop Document" = "Έγγραφο Photoshop";
+"PowerPoint Presentation" = "Παρουσίαση PowerPoint";
+"Remove Format" = "Κατάργηση μορφής";
+"Show in Create menu" = "Εμφάνιση στο μενού Δημιουργία";
+"System default" = "Προεπιλογή συστήματος";
+"Template" = "Πρότυπο";
+"Text Document" = "Έγγραφο κειμένου";
+"Use System Default" = "Χρησιμοποιήστε την προεπιλογή συστήματος";
+"Word Document" = "Έγγραφο Word";

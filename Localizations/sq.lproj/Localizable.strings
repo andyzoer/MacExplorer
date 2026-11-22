@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Mungon një artikull i nevojshëm nga Undo: %1$@";
 "Another file operation is running." = "Një operacion tjetër i dosjeve po zhvillohet.";
 "Appearance" = "Pamja";
-"Application" = "Aplikimi";
+"Application" = "Aplikacioni";
 "Applications" = "Aplikimet";
 "Apply and Restart" = "Zbato dhe rinis";
 "Apply to all remaining conflicts" = "Aplikohet për të gjitha konfliktet e mbetura";
@@ -422,3 +422,31 @@
 "Yesterday" = "Dje.";
 "macOS did not return the item's Trash location." = "macOS nuk e kthye vendndodhjen e artikullit \"Rash\".";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  tashmë ekziston";
+
+/* Create menu and document templates */
+"Add Format…" = "Shto format…";
+"Add a document template in Settings → Create." = "Shto një shabllon dokumenti te Cilësimet → Krijo.";
+"Alias" = "Shkurtore (alias)";
+"Alias…" = "Shkurtore (alias)…";
+"Choose a regular document with a file extension." = "Zgjidhni një dokument të rregullt me një shtesë skedari.";
+"Choose the file or folder for the alias." = "Zgjidhni skedarin ose dosjen për pseudonimin.";
+"Configure Create Menu…" = "Konfiguro Krijo menynë…";
+"Create files" = "Krijo skedarë";
+"Empty text file" = "Skedar teksti bosh";
+"Excel Workbook" = "Fletore pune Excel";
+"Illustrator Document" = "Dokument Illustrator";
+"Import Template…" = "Importo shabllon…";
+"Import a template to enable this format." = "Importoni një shabllon për të aktivizuar këtë format.";
+"Menu title" = "Titulli i menysë";
+"No compatible application found." = "Nuk u gjet asnjë aplikacion i përputhshëm.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Formatet Office përdorin dokumente bosh dhe çdo aplikacion të pajtueshëm të regjistruar. Për PSD, AI ose formate të tjera, importoni një dokument bosh të ruajtur nga redaktori juaj. Explorer kopjon shabllonet pa i ekzekutuar ato.";
+"Open after creation" = "Hap pas krijimit";
+"Photoshop Document" = "Dokument Photoshop";
+"PowerPoint Presentation" = "Prezantimi PowerPoint";
+"Remove Format" = "Hiq formatin";
+"Show in Create menu" = "Shfaq në menynë Krijo";
+"System default" = "Parazgjedhja e sistemit";
+"Template" = "Model";
+"Text Document" = "Dokument teksti";
+"Use System Default" = "Përdorni Parazgjedhjen e Sistemit";
+"Word Document" = "Dokument Word";

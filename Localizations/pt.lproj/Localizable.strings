@@ -422,3 +422,31 @@
 "Yesterday" = "Ontem";
 "macOS did not return the item's Trash location." = "O macOS não indicou onde o item ficou no Lixo.";
 "“%1$@” already exists" = "«%1$@» já existe";
+
+/* Create menu and document templates */
+"Add Format…" = "Adicionar formato…";
+"Add a document template in Settings → Create." = "Adicione um modelo de documento em Configurações → Criar.";
+"Alias" = "Alias (atalho)";
+"Alias…" = "Alias (atalho)…";
+"Choose a regular document with a file extension." = "Escolha um documento normal com uma extensão de arquivo.";
+"Choose the file or folder for the alias." = "Escolha o arquivo ou pasta para o alias.";
+"Configure Create Menu…" = "Configurar Menu Criar…";
+"Create files" = "Criar arquivos";
+"Empty text file" = "Arquivo de texto vazio";
+"Excel Workbook" = "Pasta de trabalho Excel";
+"Illustrator Document" = "Documento Illustrator";
+"Import Template…" = "Importar modelo…";
+"Import a template to enable this format." = "Importe um modelo para ativar este formato.";
+"Menu title" = "Título do menu";
+"No compatible application found." = "Nenhum aplicativo compatível encontrado.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Os formatos Office usam documentos em branco e qualquer aplicativo compatível registrado. Para PSD, AI ou outros formatos, importe um documento em branco salvo pelo seu editor. Explorer copia modelos sem executá-los.";
+"Open after creation" = "Abrir após a criação";
+"Photoshop Document" = "Documento Photoshop";
+"PowerPoint Presentation" = "Apresentação PowerPoint";
+"Remove Format" = "Remover formato";
+"Show in Create menu" = "Mostrar no menu Criar";
+"System default" = "Padrão do sistema";
+"Template" = "Modelo";
+"Text Document" = "Documento de texto";
+"Use System Default" = "Usar padrão do sistema";
+"Word Document" = "Documento Word";

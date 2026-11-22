@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Chybí položka, kterou Undo potřebuje: %1$@";
 "Another file operation is running." = "Jde o další operaci s souborem.";
 "Appearance" = "Výhled";
-"Application" = "Využití";
+"Application" = "Aplikace";
 "Applications" = "Žádosti";
 "Apply and Restart" = "Použít a restartovat";
 "Apply to all remaining conflicts" = "Použije se na všechny zbývající konflikty";
@@ -422,3 +422,31 @@
 "Yesterday" = "Včera .";
 "macOS did not return the item's Trash location." = "macOS nenavrátila polohu položky Trash.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  již existuje";
+
+/* Create menu and document templates */
+"Add Format…" = "Přidat formát…";
+"Add a document template in Settings → Create." = "Přidejte šablonu dokumentu v Nastavení → Vytvořit.";
+"Alias" = "Zástupce (alias)";
+"Alias…" = "Zástupce (alias)…";
+"Choose a regular document with a file extension." = "Vyberte běžný dokument s příponou souboru.";
+"Choose the file or folder for the alias." = "Vyberte soubor nebo složku pro alias.";
+"Configure Create Menu…" = "Konfigurovat nabídku Vytvořit…";
+"Create files" = "Vytváření souborů";
+"Empty text file" = "Prázdný textový soubor";
+"Excel Workbook" = "Sešit Excel";
+"Illustrator Document" = "Dokument Illustrator";
+"Import Template…" = "Importovat šablonu…";
+"Import a template to enable this format." = "Chcete-li povolit tento formát, importujte šablonu.";
+"Menu title" = "Název menu";
+"No compatible application found." = "Nebyla nalezena žádná kompatibilní aplikace.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Formáty Office používají prázdné dokumenty a jakoukoli registrovanou kompatibilní aplikaci. Pro PSD, AI nebo jiné formáty importujte prázdný dokument uložený vaším editorem. Explorer zkopíruje šablony bez jejich spuštění.";
+"Open after creation" = "Po vytvoření otevřít";
+"Photoshop Document" = "Dokument Photoshop";
+"PowerPoint Presentation" = "Prezentace PowerPoint";
+"Remove Format" = "Odebrat formát";
+"Show in Create menu" = "Zobrazit v nabídce Vytvořit";
+"System default" = "Výchozí nastavení systému";
+"Template" = "Šablona";
+"Text Document" = "Textový dokument";
+"Use System Default" = "Použít výchozí nastavení systému";
+"Word Document" = "Dokument Word";

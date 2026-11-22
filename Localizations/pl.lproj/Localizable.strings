@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Brakuje elementu potrzebnego do Cofnięcia: %1$@";
 "Another file operation is running." = "Trwa inna operacja na pliku.";
 "Appearance" = "Wygląd";
-"Application" = "Zastosowanie";
+"Application" = "Aplikacja";
 "Applications" = "Aplikacje";
 "Apply and Restart" = "Zastosuj i uruchom ponownie";
 "Apply to all remaining conflicts" = "Zastosuj do wszystkich pozostałych konfliktów";
@@ -422,3 +422,31 @@
 "Yesterday" = "Wczoraj";
 "macOS did not return the item's Trash location." = "macOS nie zwrócił lokalizacji kosza elementu.";
 "“%1$@” already exists" = "„%1$@” już istnieje";
+
+/* Create menu and document templates */
+"Add Format…" = "Dodaj format…";
+"Add a document template in Settings → Create." = "Dodaj szablon dokumentu w Ustawieniach → Utwórz.";
+"Alias" = "Alias (skrót)";
+"Alias…" = "Alias (skrót)…";
+"Choose a regular document with a file extension." = "Wybierz zwykły dokument z rozszerzeniem pliku.";
+"Choose the file or folder for the alias." = "Wybierz plik lub folder dla aliasu.";
+"Configure Create Menu…" = "Konfiguruj Utwórz menu…";
+"Create files" = "Utwórz pliki";
+"Empty text file" = "Pusty plik tekstowy";
+"Excel Workbook" = "Skoroszyt Excel";
+"Illustrator Document" = "Dokument Illustrator";
+"Import Template…" = "Importuj szablon…";
+"Import a template to enable this format." = "Zaimportuj szablon, aby włączyć ten format.";
+"Menu title" = "Tytuł menu";
+"No compatible application found." = "Nie znaleziono kompatybilnej aplikacji.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Formaty Office wykorzystują puste dokumenty i dowolną zarejestrowaną kompatybilną aplikację. W przypadku PSD, AI lub innych formatów zaimportuj pusty dokument zapisany przez edytora. Explorer kopiuje szablony bez ich uruchamiania.";
+"Open after creation" = "Otwarte po utworzeniu";
+"Photoshop Document" = "Dokument Photoshop";
+"PowerPoint Presentation" = "Prezentacja PowerPoint";
+"Remove Format" = "Usuń format";
+"Show in Create menu" = "Pokaż w menu Utwórz";
+"System default" = "Domyślne ustawienie systemu";
+"Template" = "Szablon";
+"Text Document" = "Dokument tekstowy";
+"Use System Default" = "Użyj ustawień domyślnych systemu";
+"Word Document" = "Dokument Word";

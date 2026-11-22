@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "撤消所需的项目丢失：%1$@";
 "Another file operation is running." = "另一个文件操作正在运行。";
 "Appearance" = "外观";
-"Application" = "申请";
+"Application" = "应用程序";
 "Applications" = "应用程序";
 "Apply and Restart" = "应用并重新启动";
 "Apply to all remaining conflicts" = "适用于所有剩余冲突";
@@ -422,3 +422,31 @@
 "Yesterday" = "昨天";
 "macOS did not return the item's Trash location." = "macOS 未返回项目的垃圾箱位置。";
 "“%1$@” already exists" = "“%1$@”已经存在";
+
+/* Create menu and document templates */
+"Add Format…" = "添加格式…";
+"Add a document template in Settings → Create." = "在“设置”→“创建”中添加文档模板。";
+"Alias" = "替身";
+"Alias…" = "替身…";
+"Choose a regular document with a file extension." = "选择带有文件扩展名的常规文档。";
+"Choose the file or folder for the alias." = "选择替身指向的文件或文件夹。";
+"Configure Create Menu…" = "配置“创建”菜单…";
+"Create files" = "创建文件";
+"Empty text file" = "空文本文件";
+"Excel Workbook" = "Excel 练习册";
+"Illustrator Document" = "Illustrator文档";
+"Import Template…" = "导入模板…";
+"Import a template to enable this format." = "导入模板以启用此格式。";
+"Menu title" = "菜单标题";
+"No compatible application found." = "找不到兼容的应用程序。";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office 格式使用空白文档和任何注册的兼容应用程序。对于 PSD、AI 或其他格式，导入由编辑器保存的空白文档。 Explorer 复制模板而不运行它们。";
+"Open after creation" = "创建后打开";
+"Photoshop Document" = "Photoshop文档";
+"PowerPoint Presentation" = "PowerPoint 演示";
+"Remove Format" = "删除格式";
+"Show in Create menu" = "在创建菜单中显示";
+"System default" = "系统默认";
+"Template" = "模板";
+"Text Document" = "文本文档";
+"Use System Default" = "使用系统默认值";
+"Word Document" = "Word文档";

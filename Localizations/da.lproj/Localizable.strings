@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Et element, der kræves af Fortryd, mangler: %1$@";
 "Another file operation is running." = "En anden filhandling kører.";
 "Appearance" = "Udseende";
-"Application" = "Ansøgning";
+"Application" = "Program";
 "Applications" = "Ansøgninger";
 "Apply and Restart" = "Anvend og genstart";
 "Apply to all remaining conflicts" = "Anvend på alle resterende konflikter";
@@ -422,3 +422,31 @@
 "Yesterday" = "I går";
 "macOS did not return the item's Trash location." = "macOS returnerede ikke varens papirkurv.";
 "“%1$@” already exists" = "\"%1$@\" eksisterer allerede";
+
+/* Create menu and document templates */
+"Add Format…" = "Tilføj format…";
+"Add a document template in Settings → Create." = "Tilføj en dokumentskabelon i Indstillinger → Opret.";
+"Alias" = "Henvisning";
+"Alias…" = "Henvisning…";
+"Choose a regular document with a file extension." = "Vælg et almindeligt dokument med filtypenavn.";
+"Choose the file or folder for the alias." = "Vælg filen eller mappen til aliaset.";
+"Configure Create Menu…" = "Konfigurer Opret menu…";
+"Create files" = "Opret filer";
+"Empty text file" = "Tom tekstfil";
+"Excel Workbook" = "Excel arbejdsbog";
+"Illustrator Document" = "Illustrator Dokument";
+"Import Template…" = "Importer skabelon…";
+"Import a template to enable this format." = "Importer en skabelon for at aktivere dette format.";
+"Menu title" = "Menutitel";
+"No compatible application found." = "Ingen kompatibel applikation fundet.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office-formater bruger tomme dokumenter og enhver registreret kompatibel app. For PSD, AI eller andre formater skal du importere et tomt dokument gemt af din editor. Explorer kopierer skabeloner uden at køre dem.";
+"Open after creation" = "Åben efter oprettelse";
+"Photoshop Document" = "Photoshop Dokument";
+"PowerPoint Presentation" = "PowerPoint Præsentation";
+"Remove Format" = "Fjern format";
+"Show in Create menu" = "Vis i menuen Opret";
+"System default" = "Systemstandard";
+"Template" = "Skabelon";
+"Text Document" = "Tekstdokument";
+"Use System Default" = "Brug systemstandard";
+"Word Document" = "Word Dokument";

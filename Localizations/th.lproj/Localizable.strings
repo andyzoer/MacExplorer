@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "รายการที่ Undo ต้องการหายไป: %1$@";
 "Another file operation is running." = "กำลังดำเนินการกับไฟล์อื่นอยู่";
 "Appearance" = "การปรากฏตัว";
-"Application" = "การสมัคร";
+"Application" = "แอปพลิเคชัน";
 "Applications" = "การใช้งาน";
 "Apply and Restart" = "นำไปใช้และเริ่มใหม่";
 "Apply to all remaining conflicts" = "ใช้กับข้อขัดแย้งที่เหลือทั้งหมด";
@@ -422,3 +422,31 @@
 "Yesterday" = "เมื่อวาน";
 "macOS did not return the item's Trash location." = "macOS ไม่ได้ส่งคืนตำแหน่งถังขยะของรายการ";
 "“%1$@” already exists" = "“%1$@” มีอยู่แล้ว";
+
+/* Create menu and document templates */
+"Add Format…" = "เพิ่มรูปแบบ…";
+"Add a document template in Settings → Create." = "เพิ่มเทมเพลตเอกสารในการตั้งค่า → สร้าง";
+"Alias" = "นามแฝง (ทางลัด)";
+"Alias…" = "นามแฝง (ทางลัด)…";
+"Choose a regular document with a file extension." = "เลือกเอกสารปกติที่มีนามสกุลไฟล์";
+"Choose the file or folder for the alias." = "เลือกไฟล์หรือโฟลเดอร์สำหรับนามแฝง";
+"Configure Create Menu…" = "กำหนดค่าสร้างเมนู…";
+"Create files" = "สร้างไฟล์";
+"Empty text file" = "ไฟล์ข้อความว่างเปล่า";
+"Excel Workbook" = "สมุดงาน Excel";
+"Illustrator Document" = "เอกสาร Illustrator";
+"Import Template…" = "นำเข้าเทมเพลต…";
+"Import a template to enable this format." = "นำเข้าเทมเพลตเพื่อเปิดใช้งานรูปแบบนี้";
+"Menu title" = "ชื่อเมนู";
+"No compatible application found." = "ไม่พบแอปพลิเคชันที่เข้ากันได้";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "รูปแบบ Office ใช้เอกสารเปล่าและแอปที่รองรับที่ลงทะเบียนไว้ สำหรับ PSD, AI หรือรูปแบบอื่นๆ ให้นำเข้าเอกสารเปล่าที่บันทึกโดยโปรแกรมแก้ไขของคุณ Explorer คัดลอกเทมเพลตโดยไม่ต้องรัน";
+"Open after creation" = "เปิดหลังการสร้าง";
+"Photoshop Document" = "เอกสาร Photoshop";
+"PowerPoint Presentation" = "การนำเสนอ PowerPoint";
+"Remove Format" = "ลบรูปแบบ";
+"Show in Create menu" = "แสดงในเมนูสร้าง";
+"System default" = "ค่าเริ่มต้นของระบบ";
+"Template" = "แม่แบบ";
+"Text Document" = "เอกสารข้อความ";
+"Use System Default" = "ใช้ค่าเริ่มต้นของระบบ";
+"Word Document" = "เอกสาร Word";

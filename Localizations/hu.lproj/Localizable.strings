@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Az Undo által igényelt elem hiányzik: %1$@";
 "Another file operation is running." = "Újabb fájloperáció fut.";
 "Appearance" = "A megjelenés";
-"Application" = "Kiegészítés";
+"Application" = "Alkalmazás";
 "Applications" = "A kérelmek";
 "Apply and Restart" = "Alkalmazás és újraindítás";
 "Apply to all remaining conflicts" = "Minden fennmaradó konfliktusra alkalmazható";
@@ -422,3 +422,31 @@
 "Yesterday" = "Tegnap.";
 "macOS did not return the item's Trash location." = "macOS nem küldte vissza a tételt a szeméthelyre.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  már létezik";
+
+/* Create menu and document templates */
+"Add Format…" = "Formátum hozzáadása…";
+"Add a document template in Settings → Create." = "Dokumentumsablon hozzáadása a Beállítások → Létrehozás menüpontban.";
+"Alias" = "Alias (hivatkozás)";
+"Alias…" = "Alias (hivatkozás)…";
+"Choose a regular document with a file extension." = "Válasszon egy normál dokumentumot fájlkiterjesztéssel.";
+"Choose the file or folder for the alias." = "Válassza ki az álnév fájlját vagy mappáját.";
+"Configure Create Menu…" = "Létrehozási menü konfigurálása…";
+"Create files" = "Fájlok létrehozása";
+"Empty text file" = "Üres szövegfájl";
+"Excel Workbook" = "Excel munkafüzet";
+"Illustrator Document" = "Illustrator dokumentum";
+"Import Template…" = "Sablon importálása…";
+"Import a template to enable this format." = "Importáljon egy sablont a formátum engedélyezéséhez.";
+"Menu title" = "Menü címe";
+"No compatible application found." = "Nem található kompatibilis alkalmazás.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "A Office formátumok üres dokumentumokat és bármely regisztrált kompatibilis alkalmazást használnak. PSD, AI vagy más formátumok esetén importáljon egy üres dokumentumot, amelyet a szerkesztő mentett. A Explorer a sablonokat futtatás nélkül másolja.";
+"Open after creation" = "Megnyitás a létrehozás után";
+"Photoshop Document" = "Photoshop dokumentum";
+"PowerPoint Presentation" = "PowerPoint bemutató";
+"Remove Format" = "Formátum eltávolítása";
+"Show in Create menu" = "Megjelenítés a Létrehozás menüben";
+"System default" = "Rendszer alapértelmezett";
+"Template" = "Sablon";
+"Text Document" = "Szöveges dokumentum";
+"Use System Default" = "Rendszer alapértelmezett beállítása";
+"Word Document" = "Word dokumentum";

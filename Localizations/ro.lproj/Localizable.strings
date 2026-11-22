@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Lipsește un element necesar Undo: %1$@";
 "Another file operation is running." = "Încă o operaţiune de fişiere e în curs de desfăşurare.";
 "Appearance" = "Înfăţişarea";
-"Application" = "Aplicare";
+"Application" = "Aplicație";
 "Applications" = "Aplicații";
 "Apply and Restart" = "Aplică și repornește";
 "Apply to all remaining conflicts" = "Se aplică tuturor conflictelor rămase";
@@ -422,3 +422,31 @@
 "Yesterday" = "Ieri .";
 "macOS did not return the item's Trash location." = "macOS nu a returnat locația deșeurilor.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  există deja";
+
+/* Create menu and document templates */
+"Add Format…" = "Adăugați format…";
+"Add a document template in Settings → Create." = "Adăugați un șablon de document în Setări → Creare.";
+"Alias" = "Alias (scurtătură)";
+"Alias…" = "Alias (scurtătură)…";
+"Choose a regular document with a file extension." = "Alegeți un document obișnuit cu o extensie de fișier.";
+"Choose the file or folder for the alias." = "Alegeți fișierul sau folderul pentru alias.";
+"Configure Create Menu…" = "Configurați Meniu Creare…";
+"Create files" = "Creați fișiere";
+"Empty text file" = "Fișier text gol";
+"Excel Workbook" = "Excel Caiet de lucru";
+"Illustrator Document" = "Illustrator Document";
+"Import Template…" = "Import șablon…";
+"Import a template to enable this format." = "Importați un șablon pentru a activa acest format.";
+"Menu title" = "Titlul meniului";
+"No compatible application found." = "Nu a fost găsită nicio aplicație compatibilă.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Formatele Office folosesc documente goale și orice aplicație compatibilă înregistrată. Pentru PSD, AI sau alte formate, importați un document gol salvat de editor. Explorer copiază șabloanele fără a le rula.";
+"Open after creation" = "Deschide după creare";
+"Photoshop Document" = "Photoshop Document";
+"PowerPoint Presentation" = "PowerPoint Prezentare";
+"Remove Format" = "Eliminați formatul";
+"Show in Create menu" = "Afișați în meniul Creare";
+"System default" = "Implicit de sistem";
+"Template" = "Șablon";
+"Text Document" = "Document text";
+"Use System Default" = "Utilizați sistemul implicit";
+"Word Document" = "Document Word";

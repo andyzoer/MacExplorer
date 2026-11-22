@@ -422,3 +422,31 @@
 "Yesterday" = "Dünən";
 "macOS did not return the item's Trash location." = "macOS bu əşyanın Çöp yeri qaytarılmadı.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  artıq mövcuddur";
+
+/* Create menu and document templates */
+"Add Format…" = "Format əlavə edin…";
+"Add a document template in Settings → Create." = "Parametrlər → Yarat bölməsində sənəd şablonu əlavə edin.";
+"Alias" = "Qısayol (alias)";
+"Alias…" = "Qısayol (alias)…";
+"Choose a regular document with a file extension." = "Fayl uzantısı olan adi sənəd seçin.";
+"Choose the file or folder for the alias." = "Ləqəb üçün fayl və ya qovluğu seçin.";
+"Configure Create Menu…" = "Menyu yarat…";
+"Create files" = "Fayllar yaradın";
+"Empty text file" = "Boş mətn faylı";
+"Excel Workbook" = "Excel İş dəftəri";
+"Illustrator Document" = "Illustrator Sənədi";
+"Import Template…" = "Import Şablonu…";
+"Import a template to enable this format." = "Bu formatı aktivləşdirmək üçün şablonu idxal edin.";
+"Menu title" = "Menyu başlığı";
+"No compatible application found." = "Uyğun proqram tapılmadı.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office formatları boş sənədlərdən və hər hansı qeydə alınmış uyğun proqramdan istifadə edir. PSD, AI və ya digər formatlar üçün redaktorunuz tərəfindən saxlanmış boş sənədi idxal edin. Explorer şablonları işə salmadan kopyalayır.";
+"Open after creation" = "Yaradıldıqdan sonra açın";
+"Photoshop Document" = "Photoshop Sənədi";
+"PowerPoint Presentation" = "PowerPoint Təqdimat";
+"Remove Format" = "Formanı Sil";
+"Show in Create menu" = "Yarat menyusunda göstərin";
+"System default" = "Sistem standartı";
+"Template" = "Şablon";
+"Text Document" = "Mətn Sənədi";
+"Use System Default" = "Defolt Sistemdən istifadə edin";
+"Word Document" = "Word Sənədi";

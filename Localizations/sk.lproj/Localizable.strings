@@ -422,3 +422,31 @@
 "Yesterday" = "Včera.";
 "macOS did not return the item's Trash location." = "macOS nevrátila polohu položky Trash.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  už existuje";
+
+/* Create menu and document templates */
+"Add Format…" = "Pridať formát…";
+"Add a document template in Settings → Create." = "Pridajte šablónu dokumentu v Nastavenia → Vytvoriť.";
+"Alias" = "Alias (odkaz)";
+"Alias…" = "Alias (odkaz)…";
+"Choose a regular document with a file extension." = "Vyberte bežný dokument s príponou súboru.";
+"Choose the file or folder for the alias." = "Vyberte súbor alebo priečinok pre alias.";
+"Configure Create Menu…" = "Konfigurovať ponuku Vytvoriť…";
+"Create files" = "Vytvárajte súbory";
+"Empty text file" = "Prázdny textový súbor";
+"Excel Workbook" = "Pracovný zošit Excel";
+"Illustrator Document" = "Dokument Illustrator";
+"Import Template…" = "Importovať šablónu…";
+"Import a template to enable this format." = "Ak chcete povoliť tento formát, importujte šablónu.";
+"Menu title" = "Názov menu";
+"No compatible application found." = "Nenašla sa žiadna kompatibilná aplikácia.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Formáty Office používajú prázdne dokumenty a akúkoľvek registrovanú kompatibilnú aplikáciu. V prípade formátov PSD, AI alebo iných formátov importujte prázdny dokument uložený editorom. Explorer skopíruje šablóny bez ich spustenia.";
+"Open after creation" = "Otvoriť po vytvorení";
+"Photoshop Document" = "Dokument Photoshop";
+"PowerPoint Presentation" = "Prezentácia PowerPoint";
+"Remove Format" = "Odstrániť formát";
+"Show in Create menu" = "Zobraziť v ponuke Vytvoriť";
+"System default" = "Predvolené nastavenie systému";
+"Template" = "Šablóna";
+"Text Document" = "Textový dokument";
+"Use System Default" = "Použiť predvolené nastavenie systému";
+"Word Document" = "Dokument Word";

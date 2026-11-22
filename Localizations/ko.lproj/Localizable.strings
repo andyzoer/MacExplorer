@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Undo가 필요로 하는 항목이 빠졌다: %1$@";
 "Another file operation is running." = "또 다른 파일 작업이 진행중입니다.";
 "Appearance" = "외형";
-"Application" = "적용";
+"Application" = "응용 프로그램";
 "Applications" = "응용 프로그램";
 "Apply and Restart" = "적용하고 재시작";
 "Apply to all remaining conflicts" = "나머지 모든 분쟁에 적용";
@@ -422,3 +422,31 @@
 "Yesterday" = "어제";
 "macOS did not return the item's Trash location." = "macOS 항목의 쓰레기 위치가 반환되지 않았습니다.";
 "“%1$@” already exists" = "\"%1$@\"는 이미 존재합니다.";
+
+/* Create menu and document templates */
+"Add Format…" = "형식 추가…";
+"Add a document template in Settings → Create." = "설정 → 생성에서 문서 템플릿을 추가하세요.";
+"Alias" = "가상본";
+"Alias…" = "가상본…";
+"Choose a regular document with a file extension." = "파일 확장자를 가진 일반 문서를 선택하세요.";
+"Choose the file or folder for the alias." = "별칭으로 사용할 파일이나 폴더를 선택하세요.";
+"Configure Create Menu…" = "생성 메뉴 구성…";
+"Create files" = "파일 생성";
+"Empty text file" = "빈 텍스트 파일";
+"Excel Workbook" = "Excel 워크북";
+"Illustrator Document" = "Illustrator 문서";
+"Import Template…" = "템플릿 가져오기…";
+"Import a template to enable this format." = "이 형식을 활성화하려면 템플릿을 가져오세요.";
+"Menu title" = "메뉴 제목";
+"No compatible application found." = "호환되는 애플리케이션을 찾을 수 없습니다.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office 형식은 빈 문서와 등록된 호환 앱을 사용합니다. PSD, AI 또는 기타 형식의 경우 편집기에서 저장한 빈 문서를 가져옵니다. Explorer는 템플릿을 실행하지 않고 복사합니다.";
+"Open after creation" = "생성 후 열기";
+"Photoshop Document" = "Photoshop 문서";
+"PowerPoint Presentation" = "PowerPoint 프레젠테이션";
+"Remove Format" = "형식 제거";
+"Show in Create menu" = "생성 메뉴에 표시";
+"System default" = "시스템 기본값";
+"Template" = "템플릿";
+"Text Document" = "텍스트 문서";
+"Use System Default" = "시스템 기본값 사용";
+"Word Document" = "Word 문서";

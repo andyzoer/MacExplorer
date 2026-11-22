@@ -422,3 +422,31 @@
 "Yesterday" = "Ayer";
 "macOS did not return the item's Trash location." = "macOS no indicó dónde se colocó el elemento en la papelera.";
 "“%1$@” already exists" = "Ya existe «%1$@»";
+
+/* Create menu and document templates */
+"Add Format…" = "Agregar formato…";
+"Add a document template in Settings → Create." = "Añade una plantilla de documento en Ajustes → Crear.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Elija un documento normal con una extensión de archivo.";
+"Choose the file or folder for the alias." = "Elija el archivo o carpeta para el alias.";
+"Configure Create Menu…" = "Configurar menú Crear…";
+"Create files" = "Crear archivos";
+"Empty text file" = "Archivo de texto vacío";
+"Excel Workbook" = "Libro de trabajo Excel";
+"Illustrator Document" = "Documento Illustrator";
+"Import Template…" = "Importar plantilla…";
+"Import a template to enable this format." = "Importe una plantilla para habilitar este formato.";
+"Menu title" = "Título del menú";
+"No compatible application found." = "No se encontró ninguna aplicación compatible.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Los formatos Office utilizan documentos en blanco y cualquier aplicación compatible registrada. Para PSD, AI u otros formatos, importe un documento en blanco guardado por su editor. Explorer copia plantillas sin ejecutarlas.";
+"Open after creation" = "Abrir después de la creación";
+"Photoshop Document" = "Documento Photoshop";
+"PowerPoint Presentation" = "PowerPoint Presentación";
+"Remove Format" = "Eliminar formato";
+"Show in Create menu" = "Mostrar en el menú Crear";
+"System default" = "Aplicación predeterminada del sistema";
+"Template" = "Plantilla";
+"Text Document" = "Documento de texto";
+"Use System Default" = "Usar la aplicación predeterminada del sistema";
+"Word Document" = "Documento Word";

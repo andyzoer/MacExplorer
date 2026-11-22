@@ -422,3 +422,31 @@
 "Yesterday" = "Gestern";
 "macOS did not return the item's Trash location." = "macOS hat den Ort des Objekts im Papierkorb nicht zurückgegeben.";
 "“%1$@” already exists" = "„%1$@“ ist bereits vorhanden";
+
+/* Create menu and document templates */
+"Add Format…" = "Format hinzufügen…";
+"Add a document template in Settings → Create." = "Fügen Sie eine Dokumentvorlage unter Einstellungen → Erstellen hinzu.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Wählen Sie ein normales Dokument mit einer Dateierweiterung.";
+"Choose the file or folder for the alias." = "Wählen Sie die Datei oder den Ordner für den Alias.";
+"Configure Create Menu…" = "Menü „Erstellen“ konfigurieren…";
+"Create files" = "Dateien erstellen";
+"Empty text file" = "Leere Textdatei";
+"Excel Workbook" = "Excel-Arbeitsmappe";
+"Illustrator Document" = "Illustrator-Dokument";
+"Import Template…" = "Vorlage importieren…";
+"Import a template to enable this format." = "Importieren Sie eine Vorlage, um dieses Format zu aktivieren.";
+"Menu title" = "Menütitel";
+"No compatible application found." = "Keine kompatible Anwendung gefunden.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office-Formate verwenden leere Dokumente und jede registrierte kompatible App. Importieren Sie für PSD, AI oder andere Formate ein leeres Dokument, das von Ihrem Editor gespeichert wurde. Explorer kopiert Vorlagen, ohne sie auszuführen.";
+"Open after creation" = "Nach der Erstellung öffnen";
+"Photoshop Document" = "Photoshop-Dokument";
+"PowerPoint Presentation" = "PowerPoint-Präsentation";
+"Remove Format" = "Format entfernen";
+"Show in Create menu" = "Im Menü „Erstellen“ anzeigen";
+"System default" = "Systemstandard";
+"Template" = "Vorlage";
+"Text Document" = "Textdokument";
+"Use System Default" = "Systemstandard verwenden";
+"Word Document" = "Word-Dokument";

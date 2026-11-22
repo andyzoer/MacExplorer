@@ -422,3 +422,31 @@
 "Yesterday" = "Јуче";
 "macOS did not return the item's Trash location." = "macOS није вратио место смета за ставку.";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  већ постоји";
+
+/* Create menu and document templates */
+"Add Format…" = "Додај формат…";
+"Add a document template in Settings → Create." = "Додајте шаблон документа у Подешавања → Креирај.";
+"Alias" = "Алијас (пречица)";
+"Alias…" = "Алијас (пречица)…";
+"Choose a regular document with a file extension." = "Изаберите обичан документ са екстензијом датотеке.";
+"Choose the file or folder for the alias." = "Изаберите датотеку или фасциклу за псеудоним.";
+"Configure Create Menu…" = "Конфигуришите Креирај мени…";
+"Create files" = "Креирајте датотеке";
+"Empty text file" = "Празна текстуална датотека";
+"Excel Workbook" = "Excel Радна свеска";
+"Illustrator Document" = "Illustrator документ";
+"Import Template…" = "Увези шаблон…";
+"Import a template to enable this format." = "Увезите шаблон да бисте омогућили овај формат.";
+"Menu title" = "Наслов менија";
+"No compatible application found." = "Није пронађена ниједна компатибилна апликација.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Формати Office користе празне документе и било коју регистровану компатибилну апликацију. За PSD, AI или друге формате, увезите празан документ који је сачувао ваш уређивач. Explorer копира шаблоне без њиховог покретања.";
+"Open after creation" = "Отворите након креирања";
+"Photoshop Document" = "Photoshop документ";
+"PowerPoint Presentation" = "Презентација PowerPoint";
+"Remove Format" = "Уклони формат";
+"Show in Create menu" = "Прикажи у менију Креирај";
+"System default" = "Подразумевани систем";
+"Template" = "Шаблон";
+"Text Document" = "Текстуални документ";
+"Use System Default" = "Користи подразумевано подешавање система";
+"Word Document" = "Word документ";

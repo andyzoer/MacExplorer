@@ -44,7 +44,7 @@
 "An item needed by Undo is missing: %1$@" = "Trūksta elemento, reikalingo anuliuoti: %1$@";
 "Another file operation is running." = "Vykdoma kita failo operacija.";
 "Appearance" = "Išvaizda";
-"Application" = "Paraiška";
+"Application" = "Programa";
 "Applications" = "Paraiškos";
 "Apply and Restart" = "Taikyti ir paleisti iš naujo";
 "Apply to all remaining conflicts" = "Taikyti visiems likusiems konfliktams";
@@ -422,3 +422,31 @@
 "Yesterday" = "Vakar";
 "macOS did not return the item's Trash location." = "macOS negrąžino elemento šiukšliadėžės vietos.";
 "“%1$@” already exists" = "„%1$@“ jau yra";
+
+/* Create menu and document templates */
+"Add Format…" = "Pridėti formatą…";
+"Add a document template in Settings → Create." = "Pridėkite dokumento šabloną nustatymuose → Kurti.";
+"Alias" = "Nuoroda (alias)";
+"Alias…" = "Nuoroda (alias)…";
+"Choose a regular document with a file extension." = "Pasirinkite įprastą dokumentą su failo plėtiniu.";
+"Choose the file or folder for the alias." = "Pasirinkite slapyvardžio failą arba aplanką.";
+"Configure Create Menu…" = "Konfigūruoti kūrimo meniu…";
+"Create files" = "Kurti failus";
+"Empty text file" = "Tuščias tekstinis failas";
+"Excel Workbook" = "Excel darbaknygė";
+"Illustrator Document" = "Illustrator dokumentas";
+"Import Template…" = "Importuoti šabloną…";
+"Import a template to enable this format." = "Importuokite šabloną, kad įgalintumėte šį formatą.";
+"Menu title" = "Meniu pavadinimas";
+"No compatible application found." = "Nerasta suderinamos programos.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office formatuose naudojami tušti dokumentai ir bet kokia registruota suderinama programa. Jei naudojate PSD, AI ar kitus formatus, importuokite tuščią dokumentą, išsaugotą redaktoriaus. Explorer kopijuoja šablonus jų nepaleidęs.";
+"Open after creation" = "Atidaryta po sukūrimo";
+"Photoshop Document" = "Photoshop dokumentas";
+"PowerPoint Presentation" = "PowerPoint pristatymas";
+"Remove Format" = "Pašalinti formatą";
+"Show in Create menu" = "Rodyti meniu Kurti";
+"System default" = "Sistemos numatytasis nustatymas";
+"Template" = "Šablonas";
+"Text Document" = "Tekstinis dokumentas";
+"Use System Default" = "Naudokite sistemos numatytąjį nustatymą";
+"Word Document" = "Word dokumentas";

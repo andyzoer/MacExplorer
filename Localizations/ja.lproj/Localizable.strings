@@ -422,3 +422,31 @@
 "Yesterday" = "昨日";
 "macOS did not return the item's Trash location." = "macOS はアイテムのゴミ箱の場所を返しませんでした。";
 "“%1$@” already exists" = "「%1$@」はすでに存在します";
+
+/* Create menu and document templates */
+"Add Format…" = "フォーマットを追加…";
+"Add a document template in Settings → Create." = "[設定] → [作成] でドキュメント テンプレートを追加します。";
+"Alias" = "エイリアス";
+"Alias…" = "エイリアス…";
+"Choose a regular document with a file extension." = "ファイル拡張子が付いた通常のドキュメントを選択してください。";
+"Choose the file or folder for the alias." = "エイリアスのファイルまたはフォルダーを選択します。";
+"Configure Create Menu…" = "「作成」メニューを設定…";
+"Create files" = "ファイルの作成";
+"Empty text file" = "空のテキスト ファイル";
+"Excel Workbook" = "Excel ワークブック";
+"Illustrator Document" = "Illustrator ドキュメント";
+"Import Template…" = "テンプレートをインポート…";
+"Import a template to enable this format." = "この形式を有効にするには、テンプレートをインポートします。";
+"Menu title" = "メニュータイトル";
+"No compatible application found." = "互換性のあるアプリケーションが見つかりません。";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office 形式では、空白のドキュメントと登録された互換性のあるアプリが使用されます。 PSD、AI、またはその他の形式の場合は、エディターで保存した空のドキュメントをインポートします。 Explorer は、テンプレートを実行せずにコピーします。";
+"Open after creation" = "作成後に開く";
+"Photoshop Document" = "Photoshop ドキュメント";
+"PowerPoint Presentation" = "PowerPoint プレゼンテーション";
+"Remove Format" = "フォーマットの削除";
+"Show in Create menu" = "作成メニューに表示";
+"System default" = "システムのデフォルト";
+"Template" = "テンプレート";
+"Text Document" = "テキストドキュメント";
+"Use System Default" = "システムデフォルトを使用";
+"Word Document" = "Word ドキュメント";

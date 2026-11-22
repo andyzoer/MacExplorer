@@ -422,3 +422,31 @@
 "Yesterday" = "Երեկ";
 "macOS did not return the item's Trash location." = "macOS չի վերադարձրել տարրերի աղբի տեղակայումը:";
 "“%1$@” already exists" = "⁇ %1$@ ⁇  արդեն գոյություն ունի";
+
+/* Create menu and document templates */
+"Add Format…" = "Ավելացնել ձևաչափ…";
+"Add a document template in Settings → Create." = "Ավելացրեք փաստաթղթի ձևանմուշ Կարգավորումներ → Ստեղծել:";
+"Alias" = "Դյուրանցում (alias)";
+"Alias…" = "Դյուրանցում (alias)…";
+"Choose a regular document with a file extension." = "Ընտրեք սովորական փաստաթուղթ՝ ֆայլի ընդլայնմամբ:";
+"Choose the file or folder for the alias." = "Ընտրեք կեղծանունի ֆայլը կամ թղթապանակը:";
+"Configure Create Menu…" = "Կարգավորել Ստեղծել ընտրացանկը…";
+"Create files" = "Ստեղծեք ֆայլեր";
+"Empty text file" = "Դատարկ տեքստային ֆայլ";
+"Excel Workbook" = "Excel Աշխատանքային տետր";
+"Illustrator Document" = "Illustrator փաստաթուղթ";
+"Import Template…" = "Ներմուծել ձևանմուշ…";
+"Import a template to enable this format." = "Ներմուծեք ձևանմուշ՝ այս ձևաչափը միացնելու համար:";
+"Menu title" = "Ցանկի վերնագիր";
+"No compatible application found." = "Համատեղելի ծրագիր չի գտնվել:";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office ձևաչափերն օգտագործում են դատարկ փաստաթղթեր և ցանկացած գրանցված համատեղելի հավելված: PSD, AI կամ այլ ձևաչափերի համար ներմուծեք ձեր խմբագրի կողմից պահպանված դատարկ փաստաթուղթ: Explorer պատճենում է ձևանմուշները՝ առանց դրանք գործարկելու:";
+"Open after creation" = "Բացեք ստեղծումից հետո";
+"Photoshop Document" = "Photoshop փաստաթուղթ";
+"PowerPoint Presentation" = "PowerPoint ներկայացում";
+"Remove Format" = "Հեռացնել ձևաչափը";
+"Show in Create menu" = "Ցուցադրել Ստեղծել ցանկում";
+"System default" = "Համակարգի լռելյայն";
+"Template" = "Կաղապար";
+"Text Document" = "Տեքստային փաստաթուղթ";
+"Use System Default" = "Օգտագործեք համակարգի լռելյայն";
+"Word Document" = "Word փաստաթուղթ";
