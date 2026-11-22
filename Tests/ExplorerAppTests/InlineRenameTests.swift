@@ -76,6 +76,57 @@ struct InlineRenameTests {
         #expect(rename.editor == nil)
     }
 
+    @Test func editorGrowsWithRowTextAndWrapsWithinIconTiles() throws {
+        _ = NSApplication.shared
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 500, height: 300), styleMask: [.titled], backing: .buffered, defer: false)
+        window.isReleasedWhenClosed = false
+        defer { window.close() }
+        let root = Surface(frame: NSRect(x: 0, y: 0, width: 500, height: 300))
+        window.contentView = root
+        NSLayoutConstraint.activate([root.widthAnchor.constraint(equalToConstant: 500), root.heightAnchor.constraint(equalToConstant: 300)])
+        let rowLabel = NSTextField(labelWithString: "x.txt")
+        rowLabel.frame = NSRect(x: 35, y: 25, width: 400, height: 16); root.addSubview(rowLabel)
+        let rename = InlineRename()
+        let file = FileItem(url: URL(fileURLWithPath: "/tmp/x.txt"), name: "x.txt", isDirectory: false)
+        rename.begin(file, at: rowLabel)
+        let field = try #require(rename.editor)
+        let initialWidth = field.frame.width
+        #expect(initialWidth < 150)
+        field.stringValue = "A substantially longer filename.txt"
+        rename.controlTextDidChange(Notification(name: NSControl.textDidChangeNotification, object: field))
+        #expect(field.frame.width > initialWidth)
+        let long = String(repeating: "long", count: 100) + ".txt"
+        field.stringValue = long
+        rename.controlTextDidChange(Notification(name: NSControl.textDidChangeNotification, object: field))
+        #expect(field.frame.width <= rowLabel.frame.width + 6)
+        #expect(field.stringValue == long)
+        field.stringValue = "x"
+        rename.controlTextDidChange(Notification(name: NSControl.textDidChangeNotification, object: field))
+        #expect(field.frame.width <= initialWidth)
+        rename.cancel()
+        let tile = Surface(frame: NSRect(x: 100, y: 80, width: 120, height: 115)); root.addSubview(tile)
+        let iconLabel = NSTextField(wrappingLabelWithString: "")
+        iconLabel.font = .systemFont(ofSize: 12); iconLabel.alignment = .center; iconLabel.maximumNumberOfLines = 2
+        iconLabel.frame = NSRect(x: 6, y: 70, width: 108, height: 35); tile.addSubview(iconLabel)
+        let folder = FileItem(url: URL(fileURLWithPath: "/tmp/platform-tools-and-documents"), name: "platform-tools-and-documents", isDirectory: true)
+        rename.begin(folder, at: iconLabel)
+        let wrapped = try #require(rename.editor)
+        let frameInTile = tile.convert(wrapped.frame, from: root)
+        #expect(frameInTile.minX >= 0 && frameInTile.maxX <= tile.bounds.width)
+        #expect(wrapped.maximumNumberOfLines == 2)
+        #expect(wrapped.cell?.wraps == true)
+        #expect(wrapped.cell?.isScrollable == false)
+        #expect(wrapped.frame.height > field.frame.height)
+        let text = try #require(wrapped.currentEditor() as? NSTextView)
+        #expect(!text.isHorizontallyResizable)
+        #expect(text.textContainer?.widthTracksTextView == true)
+        #expect(wrapped.stringValue == folder.name)
+        wrapped.stringValue = "short"
+        rename.controlTextDidChange(Notification(name: NSControl.textDidChangeNotification, object: wrapped))
+        #expect(wrapped.frame.height <= field.frame.height + 1)
+        rename.cancel()
+    }
+
     @Test func inlineEditorSelectsTheStemCommitsOnFocusLossAndEscapeDiscardsChanges() throws {
         _ = NSApplication.shared
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 500, height: 200), styleMask: [.titled], backing: .buffered, defer: false)

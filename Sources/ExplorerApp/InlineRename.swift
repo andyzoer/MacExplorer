@@ -31,6 +31,9 @@ final class InlineRename: NSObject, NSTextFieldDelegate {
     private var original: FileItem?
     private weak var label: NSTextField?
     private weak var previousResponder: NSResponder?
+    private var nameRect = NSRect.zero
+    private var availableRect = NSRect.zero
+    private var wrapsName = false
     private var windowProvider: (() -> NSWindow?)?
     private var targetProvider: ((NSEvent) -> Target?)?
     private var allowed: ((FileItem) -> Bool)?
@@ -109,7 +112,7 @@ final class InlineRename: NSObject, NSTextFieldDelegate {
 
     func begin(_ item: FileItem, at label: NSTextField) {
         cancel()
-        guard let host = label.window?.contentView, !label.visibleRect.isEmpty else { return }
+        guard let host = label.window?.contentView, !label.bounds.intersection(label.visibleRect).isEmpty else { return }
         let field = NSTextField(string: item.name)
         field.font = label.font; field.alignment = label.alignment
         field.isEditable = true; field.isSelectable = true
@@ -118,22 +121,17 @@ final class InlineRename: NSObject, NSTextFieldDelegate {
         field.wantsLayer = true; field.layer?.borderWidth = 0.5
         field.layer?.borderColor = NSColor.separatorColor.cgColor
         field.backgroundColor = .textBackgroundColor; field.textColor = .textColor
-        field.cell?.usesSingleLineMode = true; field.cell?.isScrollable = true
+        wrapsName = label.alignment == .center && label.maximumNumberOfLines > 1
+        field.cell?.usesSingleLineMode = !wrapsName; field.cell?.isScrollable = !wrapsName
+        field.cell?.wraps = wrapsName
+        field.maximumNumberOfLines = wrapsName ? 2 : 1
+        field.lineBreakMode = wrapsName ? .byCharWrapping : .byClipping
         field.setAccessibilityLabel(L10n.text("Rename")); field.delegate = self
-        let labelRect = label.convert(label.bounds, to: host)
-        let font = field.font ?? NSFont.systemFont(ofSize: 12)
-        let lineHeight = ceil(font.ascender - font.descender + font.leading)
-        let height = max(18, lineHeight + 4)
-        var rect = labelRect.insetBy(dx: -3, dy: 0)
-        if labelRect.height > lineHeight * 1.5 {
-            rect.origin.y = host.isFlipped ? labelRect.minY : labelRect.maxY - height
-        } else {
-            rect.origin.y = labelRect.midY - height / 2
-        }
-        rect.size.height = height
-        field.frame = rect.intersection(host.bounds)
+        nameRect = label.convert(label.bounds, to: host)
+        availableRect = label.convert(label.bounds.intersection(label.visibleRect), to: host).intersection(host.bounds)
         previousResponder = label.window?.firstResponder
         original = item; self.label = label; editor = field
+        resizeEditor(in: host)
         label.isHidden = true
         host.addSubview(field)
         field.selectText(nil)
@@ -142,6 +140,30 @@ final class InlineRename: NSObject, NSTextFieldDelegate {
             text.selectedRange = NSRange(location: 0, length: (item.name as NSString).length - (ext.isEmpty ? 0 : (ext as NSString).length + 1))
         }
     }
+    private func resizeEditor(in host: NSView) {
+        guard let field = editor else { return }
+        let font = field.font ?? NSFont.systemFont(ofSize: 12)
+        let lineHeight = ceil(font.ascender - font.descender + font.leading)
+        let maxWidth = max(1, min(availableRect.width + 6, host.bounds.maxX - availableRect.minX + 3))
+        let value = field.currentEditor()?.string ?? field.stringValue
+        let measured = ceil((value as NSString).size(withAttributes: [.font: font]).width) + 12
+        let width = wrapsName ? maxWidth : min(maxWidth, max(32, measured))
+        var height = max(18, lineHeight + 4)
+        if wrapsName {
+            let paragraph = NSMutableParagraphStyle(); paragraph.lineBreakMode = .byCharWrapping
+            let bounds = (value as NSString).boundingRect(with: NSSize(width: max(1, width - 8), height: .greatestFiniteMagnitude),
+                options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [.font: font, .paragraphStyle: paragraph])
+            height = min(lineHeight * 2 + 4, max(height, ceil(bounds.height) + 4))
+        }
+        let y: CGFloat
+        if wrapsName { y = host.isFlipped ? nameRect.minY : nameRect.maxY - height }
+        else { y = nameRect.midY - height / 2 }
+        field.frame = NSRect(x: availableRect.minX - 3, y: y, width: width, height: height).intersection(host.bounds)
+        if let text = field.currentEditor() as? NSTextView {
+            text.scrollRangeToVisible(field.currentEditor()?.selectedRange ?? NSRange(location: 0, length: 0))
+        }
+    }
+
     func cancel() {
         generation = UUID(); pending = nil; gesture.reset()
         guard let field = editor else { return }
@@ -176,6 +198,7 @@ final class InlineRename: NSObject, NSTextFieldDelegate {
     func controlTextDidEndEditing(_ notification: Notification) { commit() }
     func controlTextDidChange(_ notification: Notification) {
         editor?.toolTip = nil; editor?.layer?.borderColor = NSColor.separatorColor.cgColor; editor?.layer?.borderWidth = 0.5
+        if let host = editor?.superview { resizeEditor(in: host) }
     }
 }
 
@@ -201,12 +224,12 @@ extension BrowserViewController {
             let row = table.row(at: table.convert(event.locationInWindow, from: nil))
             guard let item = file(atRow: row), let column = table.tableColumns.firstIndex(where: { $0.identifier.rawValue == "name" }),
                   let cell = table.view(atColumn: column, row: row, makeIfNecessary: false) as? NSTableCellView,
-                  let label = cell.textField, label.visibleRect.contains(label.convert(event.locationInWindow, from: nil)) else { return nil }
+                  let label = cell.textField, label.bounds.intersection(label.visibleRect).contains(label.convert(event.locationInWindow, from: nil)) else { return nil }
             return .init(item: item, label: label, selected: selectedItems.count == 1 && selectedItems.first?.id == item.id)
         }
         guard let path = collection.indexPathForItem(at: collection.convert(event.locationInWindow, from: nil)), let item = file(at: path),
               let label = collection.item(at: path)?.textField,
-              label.visibleRect.contains(label.convert(event.locationInWindow, from: nil)) else { return nil }
+              label.bounds.intersection(label.visibleRect).contains(label.convert(event.locationInWindow, from: nil)) else { return nil }
         return .init(item: item, label: label, selected: selectedItems.count == 1 && selectedItems.first?.id == item.id)
     }
     func renameSelectedInline() {
