@@ -78,14 +78,8 @@ private final class IconTile: Surface {
     override func mouseExited(with event: NSEvent) { resetHover() }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        if selected || hovering || dropTarget {
-            (selected || dropTarget ? Palette.selected : NSColor.controlAccentColor.withAlphaComponent(0.10)).setFill()
-            let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 2, dy: 2), xRadius: 7, yRadius: 7)
-            shape.fill()
-            NSColor.controlAccentColor.withAlphaComponent(dropTarget ? 1 : hovering ? 0.55 : 0.35).setStroke()
-            shape.lineWidth = dropTarget ? 2 : 1
-            shape.stroke()
-        }
+        FileItemHighlight.draw(in: bounds.insetBy(dx: 2, dy: 2), selected: selected,
+                               hovered: hovering, dropTarget: dropTarget, radius: 7)
     }
 }
 

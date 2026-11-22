@@ -198,6 +198,8 @@ final class FlatMenuButton: NSPopUpButton {
     override init(frame: NSRect, pullsDown flag: Bool) {
         super.init(frame: frame, pullsDown: flag)
         isBordered = false; bezelStyle = .regularSquare; font = .systemFont(ofSize: 12)
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
@@ -253,17 +255,12 @@ class FileRowView: NSTableRowView {
         needsDisplay = true
     }
     override func drawSelection(in dirtyRect: NSRect) {
-        Palette.selected.setFill(); bounds.fill()
+        FileItemHighlight.draw(in: bounds.insetBy(dx: 1.5, dy: 0.5), selected: true, hovered: hovering)
     }
     override func drawBackground(in dirtyRect: NSRect) {
         super.drawBackground(in: dirtyRect)
         guard hovering && !isSelected else { return }
-        let shape = NSBezierPath(roundedRect: bounds.insetBy(dx: 1.5, dy: 0.5), xRadius: 3, yRadius: 3)
-        NSColor.controlAccentColor.withAlphaComponent(0.10).setFill()
-        shape.fill()
-        NSColor.controlAccentColor.withAlphaComponent(0.55).setStroke()
-        shape.lineWidth = 1
-        shape.stroke()
+        FileItemHighlight.draw(in: bounds.insetBy(dx: 1.5, dy: 0.5), selected: false, hovered: true)
     }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
