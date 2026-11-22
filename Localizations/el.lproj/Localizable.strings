@@ -450,3 +450,8 @@
 "Text Document" = "Έγγραφο κειμένου";
 "Use System Default" = "Χρησιμοποιήστε την προεπιλογή συστήματος";
 "Word Document" = "Έγγραφο Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Εξαγωγή «%1$@»";
+"Couldn’t Eject Volume" = "Δεν ήταν δυνατή η εξαγωγή του τόμου";
+"This location cannot be ejected." = "Δεν είναι δυνατή η εξαγωγή αυτής της τοποθεσίας.";

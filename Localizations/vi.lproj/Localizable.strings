@@ -450,3 +450,8 @@
 "Text Document" = "Tài liệu văn bản";
 "Use System Default" = "Sử dụng mặc định hệ thống";
 "Word Document" = "Tài liệu Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Đẩy “%1$@” ra";
+"Couldn’t Eject Volume" = "Không thể đẩy ổ đĩa ra";
+"This location cannot be ejected." = "Không thể đẩy vị trí này ra.";

@@ -450,3 +450,8 @@
 "Text Document" = "Besedilni dokument";
 "Use System Default" = "Uporabi sistemsko privzeto";
 "Word Document" = "Dokument Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Izvrzi »%1$@«";
+"Couldn’t Eject Volume" = "Nosilca ni bilo mogoče izvreči";
+"This location cannot be ejected." = "Te lokacije ni mogoče izvreči.";

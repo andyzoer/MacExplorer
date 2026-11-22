@@ -450,3 +450,8 @@
 "Text Document" = "Текстов документ";
 "Use System Default" = "Използване на системата по подразбиране";
 "Word Document" = "Word документ";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Изваждане на „%1$@“";
+"Couldn’t Eject Volume" = "Томът не може да бъде изваден";
+"This location cannot be ejected." = "Това местоположение не може да бъде извадено.";

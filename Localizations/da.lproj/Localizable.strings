@@ -450,3 +450,8 @@
 "Text Document" = "Tekstdokument";
 "Use System Default" = "Brug systemstandard";
 "Word Document" = "Word Dokument";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Skub “%1$@” ud";
+"Couldn’t Eject Volume" = "Disken kunne ikke skubbes ud";
+"This location cannot be ejected." = "Denne placering kan ikke skubbes ud.";

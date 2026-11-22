@@ -450,3 +450,8 @@
 "Text Document" = "Տեքստային փաստաթուղթ";
 "Use System Default" = "Օգտագործեք համակարգի լռելյայն";
 "Word Document" = "Word փաստաթուղթ";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Հանել «%1$@»";
+"Couldn’t Eject Volume" = "Չհաջողվեց հանել հատորը";
+"This location cannot be ejected." = "Այս տեղադրությունը հնարավոր չէ հանել։";

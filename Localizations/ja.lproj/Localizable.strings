@@ -450,3 +450,8 @@
 "Text Document" = "テキストドキュメント";
 "Use System Default" = "システムデフォルトを使用";
 "Word Document" = "Word ドキュメント";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "「%1$@」を取り出す";
+"Couldn’t Eject Volume" = "ボリュームを取り出せませんでした";
+"This location cannot be ejected." = "この場所は取り出せません。";

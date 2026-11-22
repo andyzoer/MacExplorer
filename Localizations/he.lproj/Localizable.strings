@@ -450,3 +450,8 @@
 "Text Document" = "מסמך טקסט";
 "Use System Default" = "השתמש בברירת המחדל של המערכת";
 "Word Document" = "מסמך Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "הוצאת ״%1$@״";
+"Couldn’t Eject Volume" = "לא ניתן היה להוציא את אמצעי האחסון";
+"This location cannot be ejected." = "לא ניתן להוציא מיקום זה.";

@@ -450,3 +450,8 @@
 "Text Document" = "เอกสารข้อความ";
 "Use System Default" = "ใช้ค่าเริ่มต้นของระบบ";
 "Word Document" = "เอกสาร Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "นำ “%1$@” ออก";
+"Couldn’t Eject Volume" = "ไม่สามารถนำโวลุ่มออกได้";
+"This location cannot be ejected." = "ไม่สามารถนำตำแหน่งนี้ออกได้";

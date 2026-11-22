@@ -450,3 +450,8 @@
 "Text Document" = "Tekstualni dokument";
 "Use System Default" = "Koristi zadane postavke sustava";
 "Word Document" = "Dokument Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Izbaci „%1$@”";
+"Couldn’t Eject Volume" = "Nije moguće izbaciti jedinicu";
+"This location cannot be ejected." = "Ovu lokaciju nije moguće izbaciti.";

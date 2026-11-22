@@ -450,3 +450,8 @@
 "Text Document" = "Document texte";
 "Use System Default" = "Utiliser l’application par défaut du système";
 "Word Document" = "Document Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Éjecter « %1$@ »";
+"Couldn’t Eject Volume" = "Impossible d’éjecter le volume";
+"This location cannot be ejected." = "Cet emplacement ne peut pas être éjecté.";

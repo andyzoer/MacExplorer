@@ -8,6 +8,7 @@ final class FolderNode: NSObject {
     let symbol: String
     let section: Bool
     var favoriteID: UUID?
+    var canEject = false
     var finderColors = FinderColorSummary()
     var children: [FolderNode]?
     var loading: Task<[FileItem], Error>?
@@ -69,7 +70,7 @@ final class FolderSidebar: NSViewController, NSOutlineViewDataSource, NSOutlineV
     }
     @objc private func favoritesChanged() { rebuild(); if let selectedURL { sync(to: selectedURL) } }
     @objc private func volumesChanged() {
-        let identity = StorageStore.shared.locations.map { $0.id + $0.title + $0.kind.rawValue }
+        let identity = StorageStore.shared.locations.map { $0.id + $0.title + $0.kind.rawValue + String($0.canEject) }
         guard identity != storageIdentity else { return }; storageIdentity = identity
         rebuild(); if let selectedURL { sync(to: selectedURL) }
     }
@@ -82,13 +83,15 @@ final class FolderSidebar: NSViewController, NSOutlineViewDataSource, NSOutlineV
         }
         let locations = StorageStore.shared.locations
         var devices = locations.filter { !$0.isNetworkLocation }.map {
-            FolderNode(title: $0.title, url: $0.url, symbol: $0.kind == .internalDrive ? "internaldrive" : "externaldrive")
+            let node = FolderNode(title: $0.title, url: $0.url, symbol: $0.kind == .internalDrive ? "internaldrive" : "externaldrive")
+            node.canEject = $0.canEject; return node
         }
         if !DemoData.active && !devices.contains(where: { $0.url?.path == "/" }) {
             devices.insert(FolderNode(title: "Macintosh HD", url: URL(fileURLWithPath: "/"), symbol: "internaldrive"), at: 0)
         }
         let networks = locations.filter(\.isNetworkLocation).map {
-            FolderNode(title: $0.title, url: $0.url, symbol: $0.kind == .network ? "network" : "cloud.fill")
+            let node = FolderNode(title: $0.title, url: $0.url, symbol: $0.kind == .network ? "network" : "cloud.fill")
+            node.canEject = $0.canEject; return node
         }
         roots = [FolderNode(title: L10n.text("Favorites"), url: nil, section: true, children: pins),
                  FolderNode(title: L10n.text("This Mac"), url: BrowserLocation.thisMac, symbol: "desktopcomputer", children: devices)]
@@ -235,12 +238,19 @@ final class FolderSidebar: NSViewController, NSOutlineViewDataSource, NSOutlineV
             NSLayoutConstraint.activate([image.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 2), image.centerYAnchor.constraint(equalTo: cell.centerYAnchor), image.widthAnchor.constraint(equalToConstant: 17), image.heightAnchor.constraint(equalToConstant: 17)])
             leading = image.trailingAnchor
         } else { leading = cell.leadingAnchor }
-        if node.favoriteID != nil {
+        if node.canEject, let url = node.url {
+            let eject = NSButton(image: Palette.symbol("eject.fill", size: 11) ?? NSImage(), target: nil, action: nil)
+            eject.isBordered = false; eject.toolTip = L10n.text("Eject “%1$@”", node.title)
+            eject.setAccessibilityLabel(eject.toolTip)
+            eject.target = self; eject.action = #selector(ejectNode(_:)); eject.identifier = NSUserInterfaceItemIdentifier(url.path)
+            cell.addSubview(eject); eject.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([eject.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -5), eject.centerYAnchor.constraint(equalTo: cell.centerYAnchor), eject.widthAnchor.constraint(equalToConstant: 22), eject.heightAnchor.constraint(equalToConstant: 24)])
+        } else if node.favoriteID != nil {
             let pin = NSImageView(image: Palette.symbol("pin.fill", size: 9) ?? NSImage()); pin.contentTintColor = .tertiaryLabelColor
             cell.addSubview(pin); pin.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([pin.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -8), pin.centerYAnchor.constraint(equalTo: cell.centerYAnchor), pin.widthAnchor.constraint(equalToConstant: 10), pin.heightAnchor.constraint(equalToConstant: 12)])
         }
-        NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: leading, constant: 8), label.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: node.favoriteID == nil ? -5 : -24), label.centerYAnchor.constraint(equalTo: cell.centerYAnchor)])
+        NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: leading, constant: 8), label.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: node.canEject ? -30 : node.favoriteID == nil ? -5 : -24), label.centerYAnchor.constraint(equalTo: cell.centerYAnchor)])
         cell.toolTip = [node.url?.path ?? "", FileColors.description(node.finderColors)].filter { !$0.isEmpty }.joined(separator: "\n")
         return cell
     }
@@ -275,6 +285,9 @@ final class FolderSidebar: NSViewController, NSOutlineViewDataSource, NSOutlineV
         guard url.isFileURL else { return }
         menu.addItem(ContextMenu.item(L10n.text("Open in New Window"), symbol: "macwindow.badge.plus") { (NSApp.delegate as? AppDelegate)?.newWindow(urls: [url]) })
         if let window = view.window { menu.addItem(FileColorMenu.shared.item(urls: [url], summaries: [node.finderColors], window: window)) }
+        if let location = StorageStore.shared.locations.first(where: { $0.url == url && $0.canEject }) {
+            menu.addItem(.separator()); menu.addItem(VolumeEjector.shared.item(for: location, window: view.window))
+        }
         menu.addItem(.separator())
         add(FavoriteStore.shared.favorites.contains(url) ? L10n.text("Unpin from Favorites") : L10n.text("Pin to Favorites"), #selector(pinNode(_:)), value: url, symbol: "pin")
         menu.addItem(ContextMenu.item(L10n.text("Copy as Path"), symbol: "link") { NSPasteboard.general.clearContents(); NSPasteboard.general.setString(url.path, forType: .string) })
@@ -291,6 +304,10 @@ final class FolderSidebar: NSViewController, NSOutlineViewDataSource, NSOutlineV
             add(L10n.text("Move Favorite Up"), #selector(favoriteUp(_:)), value: id, enabled: index > 0)
             add(L10n.text("Move Favorite Down"), #selector(favoriteDown(_:)), value: id, enabled: index + 1 < FavoriteStore.shared.favorites.items.count)
         }
+    }
+    @objc private func ejectNode(_ sender: NSButton) {
+        guard let path = sender.identifier?.rawValue else { return }
+        VolumeEjector.shared.eject(URL(fileURLWithPath: path), window: view.window)
     }
     @objc private func pinNode(_ sender: NSMenuItem) { if let url = sender.representedObject as? URL { FavoriteStore.shared.toggle(url) } }
     @objc private func favoriteUp(_ sender: NSMenuItem) { if let id = sender.representedObject as? UUID { FavoriteStore.shared.move(id, by: -1) } }

@@ -450,3 +450,8 @@
 "Text Document" = "Textový dokument";
 "Use System Default" = "Použiť predvolené nastavenie systému";
 "Word Document" = "Dokument Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Vysunúť „%1$@“";
+"Couldn’t Eject Volume" = "Zväzok sa nepodarilo vysunúť";
+"This location cannot be ejected." = "Toto umiestnenie nemožno vysunúť.";

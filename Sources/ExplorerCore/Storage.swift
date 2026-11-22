@@ -20,15 +20,24 @@ public struct StorageLocation: Identifiable, Equatable, Sendable {
     public var kind: Kind
     public var capacity: StorageCapacity?
     public var readOnly: Bool
+    public var canEject: Bool
     public var children: [StorageLocation]
     public var isNetworkLocation: Bool { kind == .network || kind == .googleDrive || kind == .cloud }
-    public init(url: URL, title: String, detail: String = "", kind: Kind, capacity: StorageCapacity? = nil, readOnly: Bool = false, children: [StorageLocation] = []) {
+    public init(url: URL, title: String, detail: String = "", kind: Kind, capacity: StorageCapacity? = nil, readOnly: Bool = false, canEject: Bool = false, children: [StorageLocation] = []) {
         self.url = url; self.title = title; self.detail = detail; self.kind = kind
         self.capacity = capacity; self.readOnly = readOnly; self.children = children
+        self.canEject = canEject
     }
 }
 
 public enum StorageDiscovery {
+    public static func canEject(_ url: URL) -> Bool {
+        guard url.isFileURL, url.standardizedFileURL.path != "/",
+              let values = try? url.resourceValues(forKeys: [.volumeURLKey, .volumeIsInternalKey, .volumeIsEjectableKey, .volumeIsRemovableKey, .volumeIsLocalKey]),
+              values.volume?.standardizedFileURL.path == url.standardizedFileURL.path,
+              values.volumeIsInternal != true else { return false }
+        return values.volumeIsEjectable == true || values.volumeIsRemovable == true || values.volumeIsLocal == false
+    }
     /// Exclude macOS's implementation mounts, while preserving separately mounted user volumes.
     public static func visibleVolumes(_ urls: [URL]) -> [URL] {
         var seen = Set<String>()
@@ -51,7 +60,7 @@ public enum StorageDiscovery {
         let readOnly = values?.volumeIsReadOnly ?? false
         return StorageLocation(url: url, title: values?.volumeName ?? (url.path == "/" ? "Macintosh HD" : url.lastPathComponent),
             detail: kind == .network ? L10n.text("Network drive") : url.path == "/" ? L10n.text("Local disk") : readOnly ? L10n.text("Read-only volume") : kind == .internalDrive ? L10n.text("Local disk") : L10n.text("External volume"), kind: kind,
-            capacity: StorageCapacity(total: capacity?.volumeTotalCapacity.map(Int64.init), available: capacity?.volumeAvailableCapacity.map(Int64.init)), readOnly: readOnly)
+            capacity: StorageCapacity(total: capacity?.volumeTotalCapacity.map(Int64.init), available: capacity?.volumeAvailableCapacity.map(Int64.init)), readOnly: readOnly, canEject: canEject(url))
     }
     /// Only enumerate provider roots and familiar entry folders, never their file contents.
     public static func cloudRoots(home: URL, mounted: [URL]) -> [URL] {

@@ -450,3 +450,8 @@
 "Text Document" = "文字文件";
 "Use System Default" = "使用系統預設值";
 "Word Document" = "Word文檔";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "退出「%1$@」";
+"Couldn’t Eject Volume" = "無法退出卷宗";
+"This location cannot be ejected." = "無法退出此位置。";

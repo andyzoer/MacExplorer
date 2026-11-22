@@ -450,3 +450,8 @@
 "Text Document" = "Dokumen Teks";
 "Use System Default" = "Gunakan Default Sistem";
 "Word Document" = "Dokumen Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Keluarkan “%1$@”";
+"Couldn’t Eject Volume" = "Volume tidak dapat dikeluarkan";
+"This location cannot be ejected." = "Lokasi ini tidak dapat dikeluarkan.";

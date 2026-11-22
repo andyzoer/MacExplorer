@@ -450,3 +450,8 @@
 "Text Document" = "텍스트 문서";
 "Use System Default" = "시스템 기본값 사용";
 "Word Document" = "Word 문서";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "‘%1$@’ 추출";
+"Couldn’t Eject Volume" = "볼륨을 추출할 수 없습니다";
+"This location cannot be ejected." = "이 위치는 추출할 수 없습니다.";

@@ -450,3 +450,8 @@
 "Text Document" = "Текстовий документ";
 "Use System Default" = "Використовувати системну програму";
 "Word Document" = "Документ Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Вийняти «%1$@»";
+"Couldn’t Eject Volume" = "Не вдалося вийняти том";
+"This location cannot be ejected." = "Це розташування неможливо вийняти.";

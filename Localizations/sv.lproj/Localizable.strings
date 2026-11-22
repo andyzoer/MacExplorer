@@ -450,3 +450,8 @@
 "Text Document" = "Textdokument";
 "Use System Default" = "Använd systemstandard";
 "Word Document" = "Word Dokument";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Mata ut ”%1$@”";
+"Couldn’t Eject Volume" = "Kunde inte mata ut volymen";
+"This location cannot be ejected." = "Den här platsen kan inte matas ut.";

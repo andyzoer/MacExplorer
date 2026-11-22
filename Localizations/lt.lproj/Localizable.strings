@@ -450,3 +450,8 @@
 "Text Document" = "Tekstinis dokumentas";
 "Use System Default" = "Naudokite sistemos numatytąjį nustatymą";
 "Word Document" = "Word dokumentas";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Išstumti „%1$@“";
+"Couldn’t Eject Volume" = "Nepavyko išstumti tomo";
+"This location cannot be ejected." = "Šios vietos negalima išstumti.";

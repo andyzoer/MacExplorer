@@ -450,3 +450,8 @@
 "Text Document" = "ტექსტური დოკუმენტი";
 "Use System Default" = "გამოიყენეთ სისტემის ნაგულისხმევი";
 "Word Document" = "Word დოკუმენტი";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "„%1$@“ ამოღება";
+"Couldn’t Eject Volume" = "ტომის ამოღება ვერ მოხერხდა";
+"This location cannot be ejected." = "ამ მდებარეობის ამოღება შეუძლებელია.";

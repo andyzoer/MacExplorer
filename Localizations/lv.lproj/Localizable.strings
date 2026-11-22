@@ -450,3 +450,8 @@
 "Text Document" = "Teksta dokuments";
 "Use System Default" = "Izmantojiet sistēmas noklusējumu";
 "Word Document" = "Word dokuments";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Izstumt “%1$@”";
+"Couldn’t Eject Volume" = "Neizdevās izstumt sējumu";
+"This location cannot be ejected." = "Šo atrašanās vietu nevar izstumt.";

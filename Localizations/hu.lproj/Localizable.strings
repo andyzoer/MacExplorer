@@ -450,3 +450,8 @@
 "Text Document" = "Szöveges dokumentum";
 "Use System Default" = "Rendszer alapértelmezett beállítása";
 "Word Document" = "Word dokumentum";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "„%1$@” kiadása";
+"Couldn’t Eject Volume" = "Nem sikerült kiadni a kötetet";
+"This location cannot be ejected." = "Ez a hely nem adható ki.";

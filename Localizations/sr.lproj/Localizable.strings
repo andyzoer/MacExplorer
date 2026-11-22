@@ -450,3 +450,8 @@
 "Text Document" = "Текстуални документ";
 "Use System Default" = "Користи подразумевано подешавање система";
 "Word Document" = "Word документ";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Избаци „%1$@”";
+"Couldn’t Eject Volume" = "Није могуће избацити волумен";
+"This location cannot be ejected." = "Ову локацију није могуће избацити.";

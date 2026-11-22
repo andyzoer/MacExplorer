@@ -450,3 +450,8 @@
 "Text Document" = "وثيقة نصية";
 "Use System Default" = "استخدام التطبيق الافتراضي للنظام";
 "Word Document" = "وثيقة Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "إخراج «%1$@»";
+"Couldn’t Eject Volume" = "تعذّر إخراج وحدة التخزين";
+"This location cannot be ejected." = "لا يمكن إخراج هذا الموقع.";

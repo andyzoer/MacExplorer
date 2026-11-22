@@ -450,3 +450,8 @@
 "Text Document" = "पाठ दस्तावेज़";
 "Use System Default" = "सिस्टम डिफ़ॉल्ट का उपयोग करें";
 "Word Document" = "Word दस्तावेज़";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "“%1$@” बाहर निकालें";
+"Couldn’t Eject Volume" = "वॉल्यूम बाहर नहीं निकाला जा सका";
+"This location cannot be ejected." = "इस स्थान को बाहर नहीं निकाला जा सकता।";

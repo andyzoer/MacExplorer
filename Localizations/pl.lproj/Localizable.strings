@@ -450,3 +450,8 @@
 "Text Document" = "Dokument tekstowy";
 "Use System Default" = "Użyj ustawień domyślnych systemu";
 "Word Document" = "Dokument Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Wysuń „%1$@”";
+"Couldn’t Eject Volume" = "Nie udało się wysunąć woluminu";
+"This location cannot be ejected." = "Tej lokalizacji nie można wysunąć.";

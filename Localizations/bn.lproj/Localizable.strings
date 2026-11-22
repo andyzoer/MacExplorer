@@ -450,3 +450,8 @@
 "Text Document" = "পাঠ্য নথি";
 "Use System Default" = "সিস্টেম ডিফল্ট ব্যবহার করুন";
 "Word Document" = "Word নথি";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "“%1$@” ইজেক্ট করুন";
+"Couldn’t Eject Volume" = "ভলিউম ইজেক্ট করা যায়নি";
+"This location cannot be ejected." = "এই অবস্থানটি ইজেক্ট করা যাবে না।";

@@ -450,3 +450,8 @@
 "Text Document" = "Document text";
 "Use System Default" = "Utilizați sistemul implicit";
 "Word Document" = "Document Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Ejectează „%1$@”";
+"Couldn’t Eject Volume" = "Volumul nu a putut fi ejectat";
+"This location cannot be ejected." = "Această locație nu poate fi ejectată.";

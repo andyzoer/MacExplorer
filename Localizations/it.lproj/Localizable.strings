@@ -450,3 +450,8 @@
 "Text Document" = "Documento di testo";
 "Use System Default" = "Usa impostazione predefinita del sistema";
 "Word Document" = "Documento Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Espelli “%1$@”";
+"Couldn’t Eject Volume" = "Impossibile espellere il volume";
+"This location cannot be ejected." = "Questa posizione non può essere espulsa.";

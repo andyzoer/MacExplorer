@@ -450,3 +450,8 @@
 "Text Document" = "Téacs-Doiciméad";
 "Use System Default" = "Úsáid Réamhshocrú an Chórais";
 "Word Document" = "Doiciméad Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Díchuir “%1$@”";
+"Couldn’t Eject Volume" = "Níorbh fhéidir an t-imleabhar a dhíchur";
+"This location cannot be ejected." = "Ní féidir an suíomh seo a dhíchur.";

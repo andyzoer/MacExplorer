@@ -450,3 +450,8 @@
 "Text Document" = "Tekstiasiakirja";
 "Use System Default" = "Käytä järjestelmän oletusarvoa";
 "Word Document" = "Word-asiakirja";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Poista levy ”%1$@”";
+"Couldn’t Eject Volume" = "Taltiota ei voitu poistaa";
+"This location cannot be ejected." = "Tätä sijaintia ei voi poistaa levynä.";

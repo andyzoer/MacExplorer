@@ -51,10 +51,29 @@ private final class CapacityBar: NSView {
 private final class StorageTile: FolderDropSurface {
     var selected = false { didSet { needsDisplay = true } }
     var onPress: (() -> Void)?
+    private var hovering = false
+    private var tracking: NSTrackingArea?
+    override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        if let tracking { removeTrackingArea(tracking) }
+        let area = NSTrackingArea(rect: .zero, options: [.activeInKeyWindow, .mouseEnteredAndExited, .inVisibleRect], owner: self)
+        addTrackingArea(area); tracking = area
+        hovering = window.map { visibleRect.contains(convert($0.mouseLocationOutsideOfEventStream, from: nil)) } == true
+        needsDisplay = true
+    }
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        if window == nil { resetHover() }
+    }
+    func resetHover() { hovering = false; needsDisplay = true }
+    override func mouseEntered(with event: NSEvent) {
+        hovering = visibleRect.contains(convert(event.locationInWindow, from: nil)); needsDisplay = true
+    }
+    override func mouseExited(with event: NSEvent) { resetHover() }
     override func accessibilityPerformPress() -> Bool { onPress?(); return onPress != nil }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        if selected { Palette.selected.setFill(); NSBezierPath(roundedRect: bounds.insetBy(dx: 2, dy: 2), xRadius: 4, yRadius: 4).fill() }
+        FileItemHighlight.draw(in: bounds.insetBy(dx: 2, dy: 2), selected: selected, hovered: hovering, radius: 4)
     }
 }
 
@@ -77,6 +96,13 @@ private final class StorageCard: NSCollectionViewItem {
         view.setAccessibilityElement(true); view.setAccessibilityRole(.button)
     }
     override var isSelected: Bool { didSet { (view as? StorageTile)?.selected = isSelected; view.setAccessibilitySelected(isSelected) } }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        (view as? StorageTile)?.resetHover()
+        (view as? StorageTile)?.onPress = nil
+        (view as? StorageTile)?.dropDestination = nil
+        view.toolTip = nil
+    }
     override func viewDidLayout() {
         super.viewDidLayout()
         picture.frame = NSRect(x: 10, y: 22, width: 48, height: 48)
@@ -209,6 +235,9 @@ final class ThisMacView: NSView, NSCollectionViewDataSource, NSCollectionViewDel
             item.image = NSImage(systemSymbolName: symbol, accessibilityDescription: title); menu.addItem(item)
         }
         menu.addItem(ContextMenu.item(L10n.text("Open in New Window"), symbol: "macwindow.badge.plus") { (NSApp.delegate as? AppDelegate)?.newWindow(urls: [location.url]) })
+        if location.canEject {
+            menu.addItem(.separator()); menu.addItem(VolumeEjector.shared.item(for: location, window: window))
+        }
         menu.addItem(.separator())
         menu.addItem(ContextMenu.item(L10n.text("Copy as Path"), symbol: "link") { [weak self] in self?.copyPath() })
         menu.addItem(ExternalApplications.terminalItem(folder: location.url, window: window))

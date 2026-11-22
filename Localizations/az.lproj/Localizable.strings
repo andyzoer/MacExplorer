@@ -450,3 +450,8 @@
 "Text Document" = "Mətn Sənədi";
 "Use System Default" = "Defolt Sistemdən istifadə edin";
 "Word Document" = "Word Sənədi";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "“%1$@” diskini çıxar";
+"Couldn’t Eject Volume" = "Diski çıxarmaq mümkün olmadı";
+"This location cannot be ejected." = "Bu məkanı çıxarmaq mümkün deyil.";

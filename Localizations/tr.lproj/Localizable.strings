@@ -450,3 +450,8 @@
 "Text Document" = "Metin Belgesi";
 "Use System Default" = "Sistem Varsayılanını Kullan";
 "Word Document" = "Word Belgesi";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "“%1$@” diskini çıkar";
+"Couldn’t Eject Volume" = "Birim çıkarılamadı";
+"This location cannot be ejected." = "Bu konum çıkarılamaz.";

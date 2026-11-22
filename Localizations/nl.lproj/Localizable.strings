@@ -450,3 +450,8 @@
 "Text Document" = "Tekstdocument";
 "Use System Default" = "Gebruik systeemstandaard";
 "Word Document" = "Word-document";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Verwijder ‘%1$@’";
+"Couldn’t Eject Volume" = "Het volume kon niet worden verwijderd";
+"This location cannot be ejected." = "Deze locatie kan niet worden verwijderd als volume.";

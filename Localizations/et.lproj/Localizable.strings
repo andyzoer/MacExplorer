@@ -450,3 +450,8 @@
 "Text Document" = "Tekstdokument";
 "Use System Default" = "Kasuta süsteemi vaikeseadet";
 "Word Document" = "Word dokument";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Väljuta „%1$@“";
+"Couldn’t Eject Volume" = "Köite väljutamine ebaõnnestus";
+"This location cannot be ejected." = "Seda asukohta ei saa väljutada.";

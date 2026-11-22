@@ -450,3 +450,8 @@
 "Text Document" = "Dokument teksti";
 "Use System Default" = "Përdorni Parazgjedhjen e Sistemit";
 "Word Document" = "Dokument Word";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "Nxirr “%1$@”";
+"Couldn’t Eject Volume" = "Vëllimi nuk mund të nxirrej";
+"This location cannot be ejected." = "Kjo vendndodhje nuk mund të nxirret.";

@@ -450,3 +450,8 @@
 "Text Document" = "文本文档";
 "Use System Default" = "使用系统默认值";
 "Word Document" = "Word文档";
+
+/* Mounted volume ejection */
+"Eject “%1$@”" = "推出“%1$@”";
+"Couldn’t Eject Volume" = "无法推出宗卷";
+"This location cannot be ejected." = "无法推出此位置。";
