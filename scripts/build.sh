@@ -30,6 +30,7 @@ mkdir -p "$APP_STAGE/Contents/MacOS" "$APP_STAGE/Contents/Resources" "$APP_STAGE
 cp "$BIN_PATH/Explorer" "$APP_STAGE/Contents/MacOS/Explorer"
 cp Support/Info.plist "$APP_STAGE/Contents/Info.plist"
 ditto Sources/ExplorerCore/Resources/en.lproj "$APP_STAGE/Contents/Resources/en.lproj"
+ditto Sources/ExplorerCore/Resources/Templates "$APP_STAGE/Contents/Resources/Templates"
 ditto "$FRAMEWORK" "$APP_STAGE/Contents/Frameworks/Sparkle.framework"
 if [[ ! -f .build/AppIcon.icns || scripts/generate-icon.swift -nt .build/AppIcon.icns ]]; then
   swift -module-cache-path "$PROJECT_ROOT/.build/module-cache" scripts/generate-icon.swift "$PROJECT_ROOT/.build/AppIcon.iconset"

@@ -96,7 +96,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         keyboard.onDisappear = { [weak self] in self?.recorder.cancel() }
         let updatePage = NSViewController(); updatePage.view = updatesView()
         let applications = NSViewController(); applications.view = applicationsView()
-        for (controller, title, symbol) in [(general, L10n.text("General"), "gearshape"), (applications, L10n.text("Applications"), "app.badge"), (keyboard, L10n.text("Shortcut"), "keyboard"), (updatePage, L10n.text("Updates"), "arrow.triangle.2.circlepath")] {
+        for (controller, title, symbol) in [(general, L10n.text("General"), "gearshape"), (applications, L10n.text("Applications"), "app.badge"), (NewItemSettings(), L10n.text("Create"), "doc.badge.plus"), (keyboard, L10n.text("Shortcut"), "keyboard"), (updatePage, L10n.text("Updates"), "arrow.triangle.2.circlepath")] {
             let item = NSTabViewItem(viewController: controller); item.label = title
             item.image = NSImage(systemSymbolName: symbol, accessibilityDescription: title); tabs.addTabViewItem(item)
         }

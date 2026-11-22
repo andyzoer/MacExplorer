@@ -422,3 +422,31 @@
 "Yesterday" = "Учора";
 "macOS did not return the item's Trash location." = "macOS не повернула розташування елемента в Смітнику.";
 "“%1$@” already exists" = "«%1$@» уже існує";
+
+/* Create menu and document templates */
+"Add Format…" = "Додати формат…";
+"Add a document template in Settings → Create." = "Додайте шаблон документа в розділі «Параметри → Створити».";
+"Alias" = "Ярлик";
+"Alias…" = "Ярлик…";
+"Choose a regular document with a file extension." = "Виберіть звичайний файл документа з розширенням.";
+"Choose the file or folder for the alias." = "Виберіть файл або папку, на які посилатиметься ярлик.";
+"Configure Create Menu…" = "Налаштувати меню «Створити»…";
+"Create files" = "Створення файлів";
+"Empty text file" = "Порожній текстовий файл";
+"Excel Workbook" = "Книга Excel";
+"Illustrator Document" = "Документ Illustrator";
+"Import Template…" = "Імпортувати шаблон…";
+"Import a template to enable this format." = "Імпортуйте шаблон, щоб увімкнути цей формат.";
+"Menu title" = "Назва в меню";
+"No compatible application found." = "Сумісну програму не знайдено.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Для форматів Office використовуються порожні документи та зареєстрована сумісна програма. Для PSD, AI чи інших форматів імпортуйте порожній документ зі свого редактора. Explorer копіює шаблони, не виконуючи їх.";
+"Open after creation" = "Відкривати після створення";
+"Photoshop Document" = "Документ Photoshop";
+"PowerPoint Presentation" = "Презентація PowerPoint";
+"Remove Format" = "Видалити формат";
+"Show in Create menu" = "Показувати в меню «Створити»";
+"System default" = "Системна програма";
+"Template" = "Шаблон";
+"Text Document" = "Текстовий документ";
+"Use System Default" = "Використовувати системну програму";
+"Word Document" = "Документ Word";

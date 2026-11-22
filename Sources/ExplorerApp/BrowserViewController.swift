@@ -227,7 +227,11 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
             let button = ActionButton(title, symbol: symbol, tooltip: tooltip) { [weak self] in self?.performFileAction(action) }
             operationButtons[action] = button; return button
         }
-        let new = button(.newFolder, "folder.badge.plus", L10n.text("New folder (⇧⌘N or Ctrl+Shift+N)"), title: L10n.text("New"))
+        let new = ActionButton(L10n.text("New"), symbol: "folder.badge.plus", tooltip: L10n.text("Create")) { [weak self] in
+            guard let self, let bar = self.commandBar else { return }
+            self.createMenu(destination: self.folderDestination).submenu?.popUp(positioning: nil, at: NSPoint(x: 14, y: bar.bounds.height - 2), in: bar)
+        }
+        operationButtons[.newFolder] = new
         let cut = button(.cut, "scissors", L10n.text("Cut (⌘X or Ctrl+X)"))
         let copy = button(.copy, "doc.on.doc", L10n.text("Copy (⌘C or Ctrl+C)"))
         let paste = button(.paste, "doc.on.clipboard", L10n.text("Paste (⌘V or Ctrl+V)"))
@@ -761,7 +765,9 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
             }
             menu.addItem(.separator())
         }
-        for action in [FileAction.move, .newFolder, .undo] {
+        let creationFolder = items.count == 1 && items[0].isNavigable && !items[0].isPackage ? items[0].url : folderDestination
+        menu.addItem(createMenu(destination: creationFolder))
+        for action in [FileAction.move, .undo] {
             let title = action == .undo ? operations.undoTitle.map { L10n.text("Undo %1$@", $0) } ?? L10n.text("Undo") : action.title
             menu.addItem(ContextMenu.item(title, symbol: action.menuSymbol, enabled: canPerformFileAction(action)) { [weak self] in self?.performFileAction(action) })
         }

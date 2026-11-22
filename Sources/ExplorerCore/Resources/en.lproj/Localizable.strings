@@ -422,3 +422,31 @@
 "Language packs installed" = "Language packs installed";
 "No language packs found" = "No language packs found";
 "Couldn’t Install Language Packs" = "Couldn’t Install Language Packs";
+
+/* Create menu and document templates */
+"Add Format…" = "Add Format…";
+"Add a document template in Settings → Create." = "Add a document template in Settings → Create.";
+"Alias" = "Alias";
+"Alias…" = "Alias…";
+"Choose a regular document with a file extension." = "Choose a regular document with a file extension.";
+"Choose the file or folder for the alias." = "Choose the file or folder for the alias.";
+"Configure Create Menu…" = "Configure Create Menu…";
+"Create files" = "Create files";
+"Empty text file" = "Empty text file";
+"Excel Workbook" = "Excel Workbook";
+"Illustrator Document" = "Illustrator Document";
+"Import Template…" = "Import Template…";
+"Import a template to enable this format." = "Import a template to enable this format.";
+"Menu title" = "Menu title";
+"No compatible application found." = "No compatible application found.";
+"Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them." = "Office formats use blank documents and any registered compatible app. For PSD, AI or other formats, import a blank document saved by your editor. Explorer copies templates without running them.";
+"Open after creation" = "Open after creation";
+"Photoshop Document" = "Photoshop Document";
+"PowerPoint Presentation" = "PowerPoint Presentation";
+"Remove Format" = "Remove Format";
+"Show in Create menu" = "Show in Create menu";
+"System default" = "System default";
+"Template" = "Template";
+"Text Document" = "Text Document";
+"Use System Default" = "Use System Default";
+"Word Document" = "Word Document";

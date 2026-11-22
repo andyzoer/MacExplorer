@@ -150,11 +150,11 @@ final class FileOperationController {
         return ConflictResolution(choice, applyToAll: alert.suppressionButton?.state == .on)
     }
 
-    func askName(title: String, initial: String, selectStem: Bool, window: NSWindow,
+    func askName(title: String, initial: String, selectStem: Bool, confirmTitle: String? = nil, window: NSWindow,
                  submit: @escaping (String) -> Void) {
         guard !busy, window.attachedSheet == nil else { return }
         let alert = NSAlert(); alert.messageText = title
-        alert.addButton(withTitle: title == L10n.text("New Folder") ? L10n.text("Create") : L10n.text("Rename")); alert.addButton(withTitle: L10n.text("Cancel"))
+        alert.addButton(withTitle: confirmTitle ?? (title == L10n.text("New Folder") ? L10n.text("Create") : L10n.text("Rename"))); alert.addButton(withTitle: L10n.text("Cancel"))
         let field = NSTextField(string: initial); field.frame = NSRect(x: 0, y: 0, width: 340, height: 26)
         field.setAccessibilityLabel(L10n.text("Name")); alert.accessoryView = field; alert.window.initialFirstResponder = field
         alert.beginSheetModal(for: window) { response in
