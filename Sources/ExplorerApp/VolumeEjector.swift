@@ -36,7 +36,12 @@ final class VolumeEjector {
             guard StorageDiscovery.canEject(url) else {
                 return .failure(FileOperationError(L10n.text("This location cannot be ejected.")))
             }
-            do { try NSWorkspace.shared.unmountAndEjectDevice(at: url); return .success(()) }
+            do {
+                if try !DiskImageEjection.detachIfImage(url) {
+                    try NSWorkspace.shared.unmountAndEjectDevice(at: url)
+                }
+                return .success(())
+            }
             catch { return .failure(error) }
         }.value
     }
