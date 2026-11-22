@@ -69,6 +69,64 @@ package struct LocalizationCatalog: Sendable {
         try install(from: source, into: userDirectory)
     }
 
+    /// Installer updates add new keys without replacing personal translations.
+    @discardableResult
+    package static func supplement(from source: URL, into destination: URL) throws -> Int {
+        let files = FileManager.default
+        let folders = source.pathExtension == "lproj" ? [source] :
+            try files.contentsOfDirectory(at: source, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
+        var added = 0
+        for folder in folders {
+            guard let identifier = identifier(for: folder), ExternalLocalization(folder: folder) != nil else { continue }
+            let target = destination.appendingPathComponent(identifier + ".lproj", isDirectory: true)
+            if files.fileExists(atPath: target.path),
+               try target.resourceValues(forKeys: [.isSymbolicLinkKey]).isSymbolicLink == true {
+                throw CocoaError(.fileWriteInvalidFileName)
+            }
+            try files.createDirectory(at: target, withIntermediateDirectories: true)
+            for name in ["Localizable.strings", "Localizable.stringsdict", "LocalizationCredit.strings"] {
+                let input = folder.appendingPathComponent(name), output = target.appendingPathComponent(name)
+                guard files.fileExists(atPath: input.path) else { continue }
+                let inputData = try Data(contentsOf: input)
+                guard let incoming = try PropertyListSerialization.propertyList(from: inputData, format: nil) as? [String: Any] else {
+                    throw CocoaError(.fileReadCorruptFile)
+                }
+                guard files.fileExists(atPath: output.path) else {
+                    try inputData.write(to: output, options: .atomic); added += incoming.count; continue
+                }
+                let oldData = try Data(contentsOf: output)
+                var format = PropertyListSerialization.PropertyListFormat.xml
+                guard var existing = try PropertyListSerialization.propertyList(from: oldData, format: &format) as? [String: Any] else {
+                    throw CocoaError(.fileReadCorruptFile)
+                }
+                let missing = incoming.keys.filter { existing[$0] == nil }.sorted()
+                guard !missing.isEmpty else { continue }
+                for key in missing { existing[key] = incoming[key] }
+                let merged: Data
+                if name.hasSuffix(".strings"), format == .openStep,
+                   let original = String(data: oldData, encoding: .utf8),
+                   missing.allSatisfy({ incoming[$0] is String }) {
+                    // Keep comments and formatting in ordinary UTF-8 .strings files.
+                    func quoted(_ value: String) -> String {
+                        "\"" + value.replacingOccurrences(of: "\\", with: "\\\\")
+                            .replacingOccurrences(of: "\"", with: "\\\"")
+                            .replacingOccurrences(of: "\n", with: "\\n")
+                            .replacingOccurrences(of: "\r", with: "\\r")
+                            .replacingOccurrences(of: "\t", with: "\\t") + "\""
+                    }
+                    let lines = missing.map { quoted($0) + " = " + quoted(incoming[$0] as! String) + ";" }
+                    merged = Data((original + "\n/* Additional translations from an Explorer update */\n" + lines.joined(separator: "\n") + "\n").utf8)
+                    _ = try PropertyListSerialization.propertyList(from: merged, format: nil)
+                } else {
+                    merged = try PropertyListSerialization.data(fromPropertyList: existing, format: .xml, options: 0)
+                }
+                try merged.write(to: output, options: .atomic)
+                added += missing.count
+            }
+        }
+        return added
+    }
+
     package static func install(from source: URL, into destination: URL) throws -> Bool {
         let files = FileManager.default
         let candidates = source.pathExtension == "lproj" ? [source] :

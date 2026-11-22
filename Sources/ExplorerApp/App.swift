@@ -5,6 +5,17 @@ import Quartz
 @main
 struct ExplorerMain {
     @MainActor static func main() {
+        let args = CommandLine.arguments
+        if args.count == 4, args[1] == "--merge-language-packs" {
+            do {
+                let added = try LocalizationCatalog.supplement(from: URL(fileURLWithPath: args[2]), into: URL(fileURLWithPath: args[3]))
+                print("Added \(added) missing language-pack entries.")
+            } catch {
+                FileHandle.standardError.write(Data((error.localizedDescription + "\n").utf8))
+                exit(1)
+            }
+            return
+        }
         _ = L10n.current
         let app = NSApplication.shared
         let delegate = AppDelegate()

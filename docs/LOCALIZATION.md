@@ -4,7 +4,7 @@ Explorer reads translations from your user Library when it starts. You can add a
 
 ## Install a ready-made translation
 
-English is included in Explorer. Open the disk image and double-click **Install Explorer.command**. It copies Explorer to **Applications** and adds any missing language packs for the current user. Existing packs are kept so custom translations survive reinstalling.
+English is included in Explorer. Open the disk image and double-click **Install Explorer.command**. It copies Explorer to **Applications** and adds missing language packs and missing entries in installed packs for the current user. Existing values, custom keys, plural rules and translator credits are retained. Reinstalling therefore adds new interface strings without erasing custom translations. To replace existing values with revised translations, use **Settings → General → Install Language Packs…** or edit the file explicitly.
 
 For manual installation, drag **Explorer.app** onto **Applications** in the disk image. Run **Open Language Packs Folder.command** and copy the desired `.lproj` folders from the image’s **Localizations** folder into the Finder window that opens. Reopen Explorer to load them. **Localizations/TRANSLATING.txt** provides an offline guide for new translations.
 

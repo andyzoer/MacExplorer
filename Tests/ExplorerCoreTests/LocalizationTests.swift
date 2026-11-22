@@ -51,6 +51,40 @@ struct LocalizationTests {
         return try #require(value as? [String: Any])
     }
 
+    @Test func installerAddsMissingKeysAndPreservesCustomTranslations() throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let source = directory.appendingPathComponent("source/uk.lproj")
+        let target = directory.appendingPathComponent("installed/uk.lproj")
+        for folder in [source, target] { try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true) }
+        try #"""
+        "Create" = "Створити";
+        "Eject “%1$@”" = "Вийняти «%1$@»";
+        "Template\n\"name\"" = "Шаблон\n\"назва\"";
+        "Path" = "C:\\Folder";
+        """#.write(to: source.appendingPathComponent("Localizable.strings"), atomically: true, encoding: .utf8)
+        let original = #"""
+        /* Personal translator note */
+        "Create" = "Мій варіант";
+        "Custom" = "Власний переклад";
+        """#
+        try original.write(to: target.appendingPathComponent("Localizable.strings"), atomically: true, encoding: .utf8)
+        #expect(try LocalizationCatalog.supplement(from: source.deletingLastPathComponent(), into: target.deletingLastPathComponent()) == 3)
+        let merged = try readPlist(target.appendingPathComponent("Localizable.strings")) as? [String: String]
+        #expect(merged?["Create"] == "Мій варіант")
+        #expect(merged?["Custom"] == "Власний переклад")
+        #expect(merged?["Eject “%1$@”"] == "Вийняти «%1$@»")
+        #expect(merged?["Template\n\"name\""] == "Шаблон\n\"назва\"")
+        #expect(merged?["Path"] == "C:\\Folder")
+        let first = try Data(contentsOf: target.appendingPathComponent("Localizable.strings"))
+        #expect(String(data: first, encoding: .utf8)?.contains("Personal translator note") == true)
+        #expect(try LocalizationCatalog.supplement(from: source, into: target.deletingLastPathComponent()) == 0)
+        #expect(try Data(contentsOf: target.appendingPathComponent("Localizable.strings")) == first)
+        let emptyDestination = directory.appendingPathComponent("fresh")
+        #expect(try LocalizationCatalog.supplement(from: source, into: emptyDestination) == 4)
+        #expect(try readPlist(emptyDestination.appendingPathComponent("uk.lproj/Localizable.strings")) as? [String: String] == readPlist(source.appendingPathComponent("Localizable.strings")) as? [String: String])
+    }
+
     @Test func additionalTranslationsAndCredits() {
         for (code, singular, plural) in [("es", "1 elemento", "2 elementos"), ("fr", "1 élément", "2 éléments"),
                                           ("pt", "1 item", "2 itens"), ("de", "1 Objekt", "2 Objekte")] {

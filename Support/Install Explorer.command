@@ -6,7 +6,6 @@ SOURCE_PACKS="$PAYLOAD/Localizations"
 APP="/Applications/Explorer.app"
 PACKS="$HOME/Library/Application Support/Explorer/Localizations"
 APP_STAGE=""
-PACK_STAGE=""
 
 status() {
   if [[ -t 1 && "${TERM:-dumb}" != dumb ]]; then
@@ -27,7 +26,6 @@ cleanup() {
     fi
     [[ -z "$APP_STAGE" ]] || /bin/rm -rf -- "$APP_STAGE"
   fi
-  [[ -z "$PACK_STAGE" ]] || /bin/rm -rf -- "$PACK_STAGE"
   if (( result != 0 )); then
     status 31 'Explorer installation failed.' >&2
     if [[ -t 0 ]]; then read -r '?Press Return to close.' || true; fi
@@ -40,13 +38,7 @@ trap cleanup EXIT
 /usr/bin/codesign --verify --deep --strict "$PAYLOAD/Explorer.app"
 APP_STAGE=$(/usr/bin/mktemp -d "/Applications/.explorer-install.XXXXXX")
 /bin/mkdir -p "$PACKS"
-PACK_STAGE=$(/usr/bin/mktemp -d "$PACKS/.explorer-install.XXXXXX")
 /usr/bin/ditto "$PAYLOAD/Explorer.app" "$APP_STAGE/Explorer.app"
-
-for pack in "$SOURCE_PACKS"/*.lproj; do
-  [[ -e "$PACKS/${pack:t}" ]] && continue
-  /usr/bin/ditto "$pack" "$PACK_STAGE/${pack:t}"
-done
 
 while /usr/bin/pgrep -u "$(/usr/bin/id -u)" -x Explorer >/dev/null; do
   print 'Quit Explorer (⌘Q) before continuing.'
@@ -54,9 +46,7 @@ while /usr/bin/pgrep -u "$(/usr/bin/id -u)" -x Explorer >/dev/null; do
   read -r '?Press Return to continue.'
 done
 
-for pack in "$PACK_STAGE"/*.lproj(N); do
-  /bin/mv -n "$pack" "$PACKS/${pack:t}"
-done
+"$APP_STAGE/Explorer.app/Contents/MacOS/Explorer" --merge-language-packs "$SOURCE_PACKS" "$PACKS"
 if [[ -e "$APP" || -L "$APP" ]]; then /bin/mv "$APP" "$APP_STAGE/Previous.app"; fi
 /bin/mv "$APP_STAGE/Explorer.app" "$APP"
 
