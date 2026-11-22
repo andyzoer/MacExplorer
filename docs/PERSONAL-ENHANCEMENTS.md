@@ -2,7 +2,7 @@
 
 MacExplorer was created by [Sazzad Hossain](https://github.com/djad442) at [Binary Quest](https://github.com/binaryquest/MacExplorer). This branch contains [andyzoer’s](https://github.com/andyzoer) personal additions to that project, building on the multilingual edition.
 
-Branch: [`personal-enhancements`](https://github.com/andyzoer/MacExplorer/tree/personal-enhancements). Base: `4e0a178` of the multilingual edition. The fork’s default `multilingual-localization` branch is maintained independently. Publishing this branch does not open a pull request against the original project.
+Branch: [`andyzoer-personal-enhancements`](https://github.com/andyzoer/MacExplorer/tree/andyzoer-personal-enhancements). Base: `4e0a178` of the multilingual edition. The fork’s default `multilingual-localization` branch is maintained independently. Publishing this branch does not open a pull request against the original project.
 
 ## What changed
 
@@ -51,7 +51,7 @@ The installer uses the app’s noninteractive `--merge-language-packs SOURCE DES
 Requires macOS 14+ and a Swift 6 toolchain from Xcode or the Command Line Tools:
 
 ```sh
-git clone --branch personal-enhancements https://github.com/andyzoer/MacExplorer.git
+git clone --branch andyzoer-personal-enhancements https://github.com/andyzoer/MacExplorer.git
 cd MacExplorer
 zsh scripts/build.sh
 open build/Explorer.app
