@@ -42,6 +42,7 @@ extension BrowserViewController {
         tab.displayIndex.position(forItem: index).map { IndexPath(item: $0.item, section: $0.section) }
     }
     func reloadFilePresentation(selected: Set<String>, pending: Set<String>? = nil) {
+        inlineRename.cancel()
         // Reveal an explicitly requested item even if its group was collapsed.
         if let pending {
             for group in tab.groups where group.items.contains(where: { pending.contains(FileOperationController.itemPath($0.url)) }) { tab.collapsedGroups.remove(group.id) }

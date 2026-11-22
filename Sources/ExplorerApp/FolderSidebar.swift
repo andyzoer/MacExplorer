@@ -231,7 +231,7 @@ final class FolderSidebar: NSViewController, NSOutlineViewDataSource, NSOutlineV
         label.translatesAutoresizingMaskIntoConstraints = false; cell.textField = label; cell.addSubview(label)
         let leading: NSLayoutXAxisAnchor
         if !node.section {
-            let image = NSImageView(image: Palette.symbol(node.symbol) ?? NSImage()); image.translatesAutoresizingMaskIntoConstraints = false
+            let image = NSImageView(image: Palette.symbol(node.symbol.hasPrefix("folder") ? "folder.fill" : node.symbol) ?? NSImage()); image.translatesAutoresizingMaskIntoConstraints = false
             image.contentTintColor = node.symbol.hasPrefix("folder") ? .systemYellow : node.favoriteID != nil ? (node.symbol == "house.fill" ? .systemOrange : .systemBlue) : .secondaryLabelColor
             if let color = node.finderColors.colors.first { image.contentTintColor = FileColors.color(color) }
             cell.imageView = image; cell.addSubview(image)

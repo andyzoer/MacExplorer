@@ -3,6 +3,7 @@ import ExplorerCore
 
 @MainActor
 final class FileCollectionView: NSCollectionView, ExplorerDragSource, NSUserInterfaceValidations {
+    var onMouseTrackingEnded: ((NSEvent) -> Void)?
     var onOpen: (() -> Void)?
     var onBack: (() -> Void)?
     var onPreview: (() -> Void)?
@@ -32,6 +33,7 @@ final class FileCollectionView: NSCollectionView, ExplorerDragSource, NSUserInte
     }
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
+        onMouseTrackingEnded?(event)
         if event.clickCount == 2, indexPathForItem(at: convert(event.locationInWindow, from: nil)) != nil { onOpen?() }
     }
     override func menu(for event: NSEvent) -> NSMenu? {

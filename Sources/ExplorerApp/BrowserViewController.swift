@@ -63,6 +63,7 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
     let tabsScroll = TabStripScrollView()
     let tabsDocument = TabStripDocumentView()
     let pathBar = PathBar()
+    let inlineRename = InlineRename()
     let search = SearchBox()
     weak var workspace: WorkspaceViewController?
     var commandBar: NSView!
@@ -175,6 +176,7 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
         NotificationCenter.default.addObserver(self, selector: #selector(operationsChanged), name: NSApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(favoritesChanged), name: FavoriteStore.changed, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(storageChanged), name: StorageStore.changed, object: nil)
+        installInlineRename()
         updateChrome(); loadFolder(clear: true)
     }
 
@@ -472,6 +474,7 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
     }
     func saveSession() { workspace?.saveSession() }
     func navigate(_ url: URL) {
+        inlineRename.cancel()
         rememberSelection(); tab.history.visit(url); tab.query = ""
         updateChrome(); loadFolder(clear: true); saveSession()
         view.window?.makeFirstResponder(activeFileView)
@@ -873,10 +876,7 @@ final class BrowserViewController: NSViewController, NSTableViewDataSource, NSTa
             let targets = tab.isThisMac ? [thisMacView.selectedLocation?.url].compactMap { $0 } : (!urls.isEmpty ? urls : [folder])
             FileProperties.show(targets, window: window)
         case .rename:
-            guard let item = selectedItems.first else { return }
-            operations.askName(title: L10n.text("Rename"), initial: item.name, selectStem: !item.isDirectory, window: window) { [weak self] name in
-                self?.operations.run(.rename(item.url, to: name), window: window)
-            }
+            DispatchQueue.main.async { [weak self] in self?.renameSelectedInline() }
         case .newFolder:
             var name = L10n.text("New folder"), index = 2
             let names = Set(tab.items.map { $0.name.lowercased() })

@@ -383,13 +383,18 @@ final class BrowserTabView: FolderDropSurface {
 }
 
 @MainActor
+private final class PathComboBox: NSComboBox {
+    override var alignmentRectInsets: NSEdgeInsets { NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) }
+}
+
+@MainActor
 final class PathBar: Surface, NSComboBoxDelegate {
     override var mouseDownCanMoveWindow: Bool { false }
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
     var onNavigate: ((URL) -> Void)?
     var onCommit: ((String) -> Void)?
     private let crumbs = NSStackView()
-    let field = NSComboBox()
+    let field: NSComboBox = PathComboBox()
     private var url = FileManager.default.homeDirectoryForCurrentUser
     private var editing = false
     private var searchResults: String?
@@ -398,18 +403,20 @@ final class PathBar: Surface, NSComboBoxDelegate {
         color = .controlBackgroundColor; wantsLayer = true; layer?.cornerRadius = 5
         layer?.borderWidth = 0.5; layer?.borderColor = Palette.line.cgColor
         crumbs.orientation = .horizontal; crumbs.spacing = 0
-        field.isBordered = false; field.drawsBackground = false; field.font = .systemFont(ofSize: 12)
+        field.isBezeled = false; field.isBordered = false; field.drawsBackground = false; field.font = .systemFont(ofSize: 12)
         field.delegate = self; field.target = self; field.action = #selector(commit)
         field.completes = false
         field.hasVerticalScroller = true
         field.numberOfVisibleItems = 10
         field.setAccessibilityLabel(L10n.text("Folder path")); field.isHidden = true
-        let edit = ActionButton(symbol: "pencil", tooltip: L10n.text("Edit folder path (⌘L)")) { [weak self] in self?.beginEditing() }
-        for view in [crumbs, field, edit] { addSubview(view); view.translatesAutoresizingMaskIntoConstraints = false }
+        field.focusRingType = .none
+        field.isButtonBordered = false
+        setAccessibilityHelp(L10n.text("Edit folder path (⌘L)"))
+        for view in [crumbs, field] { addSubview(view); view.translatesAutoresizingMaskIntoConstraints = false }
         NSLayoutConstraint.activate([
-            edit.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -2), edit.centerYAnchor.constraint(equalTo: centerYAnchor),
-            crumbs.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7), crumbs.trailingAnchor.constraint(lessThanOrEqualTo: edit.leadingAnchor), crumbs.centerYAnchor.constraint(equalTo: centerYAnchor),
-            field.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12), field.trailingAnchor.constraint(equalTo: edit.leadingAnchor, constant: -4), field.centerYAnchor.constraint(equalTo: centerYAnchor)
+            crumbs.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7), crumbs.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -7), crumbs.centerYAnchor.constraint(equalTo: centerYAnchor),
+            field.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10), field.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -2),
+            field.topAnchor.constraint(equalTo: topAnchor), field.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 
     }
@@ -501,6 +508,11 @@ final class PathBar: Surface, NSComboBoxDelegate {
 
 @MainActor
 final class FileTableView: NSTableView {
+    var onMouseTrackingEnded: ((NSEvent) -> Void)?
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        onMouseTrackingEnded?(event)
+    }
     var onOpen: (() -> Void)?
     var onBack: (() -> Void)?
     var onPreview: (() -> Void)?

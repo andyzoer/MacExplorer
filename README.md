@@ -14,7 +14,7 @@ MacExplorer brings familiar tabs, a folder tree, drive overviews, and keyboard s
 
 ## Personal enhancements branch
 
-This branch adds hover and selection feedback, editable paths with recent-folder history, a configurable **Create** menu with document templates, and volume ejection with a fix for reopening DMG images. The installer also adds missing translation keys to existing language packs while preserving personal edits.
+This branch adds hover and selection feedback, inline file renaming, filled sidebar folder icons, editable paths with recent-folder history, a configurable **Create** menu with document templates, and volume ejection with a fix for reopening DMG images. The installer also adds missing translation keys to existing language packs while preserving personal edits.
 
 See the [English overview of all personal updates](docs/PERSONAL-ENHANCEMENTS.md) and the [Create menu guide](CREATE-MENU.md). These changes are published separately in `andyzoer-personal-enhancements`; the fork’s default branch is maintained independently. No upstream pull request is being proposed for these personal additions, and ongoing maintenance is not promised.
 

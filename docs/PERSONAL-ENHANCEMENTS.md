@@ -16,9 +16,17 @@ Branch: [`andyzoer-personal-enhancements`](https://github.com/andyzoer/MacExplor
 
 ### Editable address bar and recent folders
 
-Click empty space in the address bar, the current folder’s breadcrumb, or the pencil button to edit the path. **⌘L** also starts editing. Ancestor breadcrumbs still navigate to their folders. The full path is selected when editing begins; Return navigates and Escape cancels.
+Click empty space in the address bar or the current folder’s breadcrumb to edit the path. The redundant pencil button has been removed. The editor fills the address bar’s height and uses a borderless native combo box without a blue focus ring. **⌘L** also starts editing. Ancestor breadcrumbs still navigate to their folders. The full path is selected when editing begins; Return navigates and Escape cancels.
 
 The native drop-down lists the 20 most recently opened folders. History is deduplicated and persists between launches. The implementation fixes a focus transition that previously caused the editor to close immediately after a click.
+
+### Rename in place
+
+A slow second click on an already selected file or folder name opens an editor directly over its label. This works in Details, Content, and icon views. Normal fast double-clicks still open items, and dragging does not start rename. **F2**, the Rename toolbar action, and the Rename context-menu action also use the inline editor.
+
+For files, the name stem is selected initially; folder names are selected in full. **Return** or clicking outside saves an edited name. Leaving an unchanged name performs no file operation. **Escape** discards edits. Invalid names remain in the editor with an error indication. Renames use the existing conflict-handling and Undo engine. Presentation changes cancel an editor whose item/view is being replaced.
+
+Nested sidebar folders now use filled yellow folder icons instead of outline symbols; special locations retain their own icons.
 
 ### Configurable Create menu
 
