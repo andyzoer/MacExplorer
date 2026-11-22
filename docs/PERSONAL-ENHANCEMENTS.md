@@ -24,7 +24,7 @@ The native drop-down lists the 20 most recently opened folders. History is dedup
 
 A slow second click on an already selected file or folder name opens an editor directly over its label. This works in Details, Content, and icon views. Normal fast double-clicks still open items, and dragging does not start rename. **F2**, the Rename toolbar action, and the Rename context-menu action also use the inline editor.
 
-For files, the name stem is selected initially; folder names are selected in full. **Return** or clicking outside saves an edited name. Leaving an unchanged name performs no file operation. **Escape** discards edits. Invalid names remain in the editor with an error indication. Renames use the existing conflict-handling and Undo engine. Presentation changes cancel an editor whose item/view is being replaced.
+The inline editor uses a thin neutral border without a blue focus ring, with its height fitted to the filename text. For files, the name stem is selected initially; folder names are selected in full. **Return** or clicking outside saves an edited name. Leaving an unchanged name performs no file operation. **Escape** discards edits. Invalid names remain in the editor with an error indication. Renames use the existing conflict-handling and Undo engine. Presentation changes cancel an editor whose item/view is being replaced.
 
 Nested sidebar folders now use filled yellow folder icons instead of outline symbols; special locations retain their own icons.
 

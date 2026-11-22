@@ -112,13 +112,25 @@ final class InlineRename: NSObject, NSTextFieldDelegate {
         guard let host = label.window?.contentView, !label.visibleRect.isEmpty else { return }
         let field = NSTextField(string: item.name)
         field.font = label.font; field.alignment = label.alignment
-        field.isEditable = true; field.isSelectable = true; field.isBordered = true
+        field.isEditable = true; field.isSelectable = true
+        field.isBezeled = false; field.isBordered = false; field.focusRingType = .none
+        field.drawsBackground = true
+        field.wantsLayer = true; field.layer?.borderWidth = 0.5
+        field.layer?.borderColor = NSColor.separatorColor.cgColor
         field.backgroundColor = .textBackgroundColor; field.textColor = .textColor
         field.cell?.usesSingleLineMode = true; field.cell?.isScrollable = true
         field.setAccessibilityLabel(L10n.text("Rename")); field.delegate = self
-        var rect = label.convert(label.bounds, to: host).insetBy(dx: -3, dy: -2)
-        let top = host.isFlipped ? rect.minY : rect.maxY - 24
-        rect.origin.y = top; rect.size.height = 24
+        let labelRect = label.convert(label.bounds, to: host)
+        let font = field.font ?? NSFont.systemFont(ofSize: 12)
+        let lineHeight = ceil(font.ascender - font.descender + font.leading)
+        let height = max(18, lineHeight + 4)
+        var rect = labelRect.insetBy(dx: -3, dy: 0)
+        if labelRect.height > lineHeight * 1.5 {
+            rect.origin.y = host.isFlipped ? labelRect.minY : labelRect.maxY - height
+        } else {
+            rect.origin.y = labelRect.midY - height / 2
+        }
+        rect.size.height = height
         field.frame = rect.intersection(host.bounds)
         previousResponder = label.window?.firstResponder
         original = item; self.label = label; editor = field
@@ -163,7 +175,7 @@ final class InlineRename: NSObject, NSTextFieldDelegate {
     }
     func controlTextDidEndEditing(_ notification: Notification) { commit() }
     func controlTextDidChange(_ notification: Notification) {
-        editor?.toolTip = nil; editor?.layer?.borderWidth = 0
+        editor?.toolTip = nil; editor?.layer?.borderColor = NSColor.separatorColor.cgColor; editor?.layer?.borderWidth = 0.5
     }
 }
 
